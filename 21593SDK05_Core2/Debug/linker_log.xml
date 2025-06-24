@@ -1,0 +1,107 @@
+<?xml version="1.0" standalone="no"?>
+<?xml-stylesheet type="text/xsl" href="file:///C:/analog/cces/3.0.2/System/linker_log.xsl"?>
+<DOCUMENT gen_time='Thu Jun 19 12:05:32 2025
+'>
+<MSG id='05B570E8' mid='li3050' type='Informational' suppressed=''>
+<TEXT><![CDATA[Input section(s) were excluded from output section 'dxe_block0_nw_code']]></TEXT>
+<EXTENDED_INFO><![CDATA[The following input section(s) were excluded
+    app_startup.doj(seg_int_code)
+    app_startup.doj(seg_int_code)
+    libc.dlb[cache_set_range_ba.doj](seg_int_code)
+    libc.dlb[flush_data_buffer_ba.doj](seg_int_code)
+    libc.dlb[lib_set_cache_ba.doj](seg_int_code)
+    libssl.dlb[adi_pwr.doj](seg_int_code)]]></EXTENDED_INFO>
+</MSG>
+<MSG id='05B571C8' mid='li3050' type='Informational' suppressed=''>
+<TEXT><![CDATA[Input section(s) were excluded from output section 'dxe_l2_uncached']]></TEXT>
+<EXTENDED_INFO><![CDATA[The following input section(s) were excluded
+    system\mcapi\GeneratedSources\mcapi_config.doj(seg_l2_uncached)]]></EXTENDED_INFO>
+</MSG>
+<MSG id='05B56748' mid='li3050' type='Informational' suppressed=''>
+<TEXT><![CDATA[Input section(s) were excluded from output section 'dxe_sdram_cpp_ctors_nw']]></TEXT>
+<EXTENDED_INFO><![CDATA[The following input section(s) were excluded
+    app_startup.doj(.gdt)
+    app_startup.doj(.gdt)
+    Customer_PP\Customer_PP.doj(seg_dmda)
+    services\pdma\adi_pdma_2156x.doj(seg_dmda)
+    src\System\Framework\Decoder_Core2.doj(seg_dmda)
+    src\System\Framework\Main_Core2.doj(seg_dmda)
+    system\mcapi\GeneratedSources\mcapi_config.doj(seg_dmda)
+    system\startup_ldf\app_heaptab.doj(seg_dmda)
+    libc.dlb[adi_fatal_data_ba.doj](seg_dmda)
+    libc.dlb[adi_rtl_sid_use_check_ba.doj](seg_dmda)
+    libc.dlb[dispatched_handler_data_ba.doj](seg_dmda)
+    libc.dlb[dispatched_handler_reg_ba.doj](seg_dmda)
+    libc.dlb[dispatched_handler_table_ba.doj](seg_dmda)
+    libc.dlb[flush_data_buffer_ba.doj](seg_dmda)
+    libc.dlb[free_ba.doj](seg_dmda)
+    libc.dlb[heap_find_block_ba.doj](seg_dmda)
+    libc.dlb[heap_install_ba.doj](seg_dmda)
+    libc.dlb[heap_lookup_ba.doj](seg_dmda)
+    libc.dlb[heap_malloc_ba.doj](seg_dmda)
+    libc.dlb[heap_num_ba.doj](seg_dmda)
+    libc.dlb[heap_setup_ba.doj](seg_dmda)
+    libc.dlb[heaps_ba.doj](seg_dmda)
+    libc.dlb[lib_set_cache_ba.doj](seg_dmda)
+    libc.dlb[prefetch_ctrl_ba.doj](seg_dmda)
+    libc.dlb[rtl_disable_interrupts_ba.doj](seg_dmda)
+    libosal_noos.dlb[adi_osal_arch_c.doj](seg_dmda)
+    libosal_noos.dlb[adi_osal_arch_int_table.doj](seg_dmda)
+    libosal_noos.dlb[adi_osal_noos_init.doj](seg_dmda)
+    libssl.dlb[Endpoint.doj](seg_dmda)
+    libssl.dlb[RemoteICC.doj](seg_dmda)
+    libssl.dlb[adi_dma.doj](seg_dmda)
+    libssl.dlb[adi_sec.doj](seg_dmda)
+    libssl.dlb[adi_tru.doj](seg_dmda)
+    libssl.dlb[mcapi.doj](seg_dmda)
+    libssl.dlb[mcapi_trans.doj](seg_dmda)]]></EXTENDED_INFO>
+</MSG>
+<MSG id='05B572A8' mid='li3050' type='Informational' suppressed=''>
+<TEXT><![CDATA[Input section(s) were excluded from output section 'dxe_sdram_cpp_ctors_bw']]></TEXT>
+<EXTENDED_INFO><![CDATA[The following input section(s) were excluded
+    app_startup.doj(seg_ctdml)
+    app_startup.doj(seg_ctdml)
+    libc.dlb[set_c.doj](seg_ctdml)]]></EXTENDED_INFO>
+</MSG>
+<MSG id='05B56208' mid='li3050' type='Informational' suppressed=''>
+<TEXT><![CDATA[Input section(s) were excluded from output section 'LIBC_segment_data']]></TEXT>
+<EXTENDED_INFO><![CDATA[The following input section(s) were excluded
+    libc.dlb[int_dispatcher_215XX_ba.doj](seg_dmda)]]></EXTENDED_INFO>
+</MSG>
+<MSG id='05B562E8' mid='li3050' type='Informational' suppressed=''>
+<TEXT><![CDATA[Input section(s) were excluded from output section 'LIBC_segment_data_dm']]></TEXT>
+<EXTENDED_INFO><![CDATA[The following input section(s) were excluded
+    libc.dlb[adi_fatal_data_ba.doj](seg_dmda)
+    libc.dlb[adi_rtl_sid_use_check_ba.doj](seg_dmda)
+    libc.dlb[dispatched_handler_data_ba.doj](seg_dmda)
+    libc.dlb[dispatched_handler_reg_ba.doj](seg_dmda)
+    libc.dlb[dispatched_handler_table_ba.doj](seg_dmda)
+    libc.dlb[flush_data_buffer_ba.doj](seg_dmda)
+    libc.dlb[free_ba.doj](seg_dmda)
+    libc.dlb[heap_find_block_ba.doj](seg_dmda)
+    libc.dlb[heap_install_ba.doj](seg_dmda)
+    libc.dlb[heap_lookup_ba.doj](seg_dmda)
+    libc.dlb[heap_malloc_ba.doj](seg_dmda)
+    libc.dlb[heap_num_ba.doj](seg_dmda)
+    libc.dlb[heap_setup_ba.doj](seg_dmda)
+    libc.dlb[heaps_ba.doj](seg_dmda)
+    libc.dlb[lib_set_cache_ba.doj](seg_dmda)
+    libc.dlb[prefetch_ctrl_ba.doj](seg_dmda)
+    libc.dlb[rtl_disable_interrupts_ba.doj](seg_dmda)
+    libosal_noos.dlb[adi_osal_arch_c.doj](seg_dmda)
+    libosal_noos.dlb[adi_osal_arch_int_table.doj](seg_dmda)
+    libosal_noos.dlb[adi_osal_noos_init.doj](seg_dmda)
+    libssl.dlb[Endpoint.doj](seg_dmda)
+    libssl.dlb[RemoteICC.doj](seg_dmda)
+    libssl.dlb[adi_dma.doj](seg_dmda)
+    libssl.dlb[adi_sec.doj](seg_dmda)
+    libssl.dlb[adi_tru.doj](seg_dmda)
+    libssl.dlb[mcapi.doj](seg_dmda)
+    libssl.dlb[mcapi_trans.doj](seg_dmda)]]></EXTENDED_INFO>
+</MSG>
+<MSG id='05B563C8' mid='li3050' type='Informational' suppressed=''>
+<TEXT><![CDATA[Input section(s) were excluded from output section 'KERNEL_DATA_L3_bw']]></TEXT>
+<EXTENDED_INFO><![CDATA[The following input section(s) were excluded
+    C:\Repo\_duplicate_repos\Prashanth\21593SDK05_7zip\21593SDK05_Core2\src\System\Framework\Init_Struct_Core2.doj(Seg_KERNAL_Data_L3)]]></EXTENDED_INFO>
+</MSG>
+</DOCUMENT>

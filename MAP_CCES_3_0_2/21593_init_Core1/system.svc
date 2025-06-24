@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<root>
+	<installedComponents>
+		<component id="com.analog.crosscore.addins.ssldd.pwr.common.sharcxi" name="PWR Sevice for SHARC" version="1.0.0" visible="false">
+			<component-description><![CDATA[This add-in provides Analog Devices' implementation of the Power Service (PWR)]]></component-description>
+			<product name="Analog Devices System Services and Device Drivers" version="1.0.0"/>
+		</component>
+		<component id="com.analog.crosscore.addins.ssldd.smpu.sharcxi" name="SMPU Service for SHARC" version="1.0.0" visible="true">
+			<component-description><![CDATA[This add-in provides Analog Devices' implementation of the System Memory Protection Unit(SMPU)]]></component-description>
+			<product name="Analog Devices System Services and Device Drivers" version="1.0.0"/>
+		</component>
+		<component id="com.analog.crosscore.addins.ssldd.pwr.sc59x.sharcxi" name="PWR Sevice for SHARC" version="2.0.1" visible="true">
+			<component-description><![CDATA[This add-in provides Analog Devices' implementation of the Power Service (PWR)]]></component-description>
+			<product name="Analog Devices System Services and Device Drivers" version="1.0.0"/>
+		</component>
+		<component id="com.analog.crosscore.addins.ssldd.tmr.common.sharcxi" name="TMR Service for SHARC" version="1.0.0" visible="false">
+			<component-description><![CDATA[This add-in provides Analog Devices' implementation of the General Purpose Timer Service (TMR)]]></component-description>
+			<product name="Analog Devices System Services and Device Drivers" version="1.0.0"/>
+		</component>
+		<component id="com.analog.crosscore.addins.ssldd.tmr.sc59x.sharcxi" name="TMR Service for SHARC" version="2.0.1" visible="true">
+			<component-description><![CDATA[This add-in provides Analog Devices' implementation of the General Purpose Timer Service (TMR)]]></component-description>
+			<product name="Analog Devices System Services and Device Drivers" version="1.0.0"/>
+		</component>
+	</installedComponents>
+	<configurations/>
+</root>

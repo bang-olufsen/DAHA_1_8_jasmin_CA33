@@ -1,0 +1,12 @@
+system/startup_ldf/app_IVT.doj: ../system/startup_ldf/app_IVT.s
+system/startup_ldf/app_IVT.doj: ../../../../../../analog/cces/3.0.2/SHARC/include/adi_osal.h
+system/startup_ldf/app_IVT.doj: ../../../../../../analog/cces/3.0.2/SHARC/include/adi_osal_arch.h
+system/startup_ldf/app_IVT.doj: ../../../../../../analog/cces/3.0.2/SHARC/include/def21593.h
+system/startup_ldf/app_IVT.doj: ../../../../../../analog/cces/3.0.2/SHARC/include/interrupt.h
+system/startup_ldf/app_IVT.doj: ../../../../../../analog/cces/3.0.2/SHARC/include/platform_include.h
+system/startup_ldf/app_IVT.doj: ../../../../../../analog/cces/3.0.2/SHARC/include/sys/ADSP-21593.h
+system/startup_ldf/app_IVT.doj: ../../../../../../analog/cces/3.0.2/SHARC/include/sys/ADSP-2159x-core.h
+system/startup_ldf/app_IVT.doj: ../../../../../../analog/cces/3.0.2/SHARC/include/sys/ADSP_SC5xx_legacy.h
+system/startup_ldf/app_IVT.doj: ../../../../../../analog/cces/3.0.2/SHARC/include/sys/anomaly_macros_rtl.h
+system/startup_ldf/app_IVT.doj: ../../../../../../analog/cces/3.0.2/SHARC/include/sys/defSC59x_id_macros.h
+system/startup_ldf/app_IVT.doj: ../../../../../../analog/cces/3.0.2/SHARC/include/sys/fatal_error_code.h
