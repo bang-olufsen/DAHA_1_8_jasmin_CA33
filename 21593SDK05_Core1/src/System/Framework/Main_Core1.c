@@ -103,6 +103,26 @@ void main()
 #endif
 	General_Decoding_Command();
 
+	Frmwk.Spi.PARAMETER_1 = 0x0A41;
+	Frmwk.Spi.PARAMETER_2 = 0x0000;
+	ChannelReorder_command();
+
+	Frmwk.Spi.PARAMETER_1 = 0x8A1B;
+	Frmwk.Spi.PARAMETER_2 = 0x0000;
+	Frmwk.Spi.PARAMETER_3 = 0x0820;
+	Frmwk.Spi.PARAMETER_4 = 0x0000;
+	Frmwk.Spi.PARAMETER_5 = 0x3c00;
+	Frmwk.Spi.PARAMETER_6 = 0x01e0;
+	Frmwk.Spi.PARAMETER_7 = 0x01e0;
+	Frmwk.Spi.PARAMETER_8 = 0x01e0;
+	Frmwk.Spi.PARAMETER_9 = 0x01e0;
+	Frmwk.Spi.PARAMETER_10 = 0x01e0;
+	Frmwk.Spi.PARAMETER_11 = 0x01e0;
+	Frmwk.Spi.PARAMETER_12 = 0x0820;
+	Frmwk.Spi.PARAMETER_13 = 0x0820;
+	Frmwk.Spi.PARAMETER_14 = 0x0820;
+	DAP_OARI_Command();
+
 	SportInitialize_Command();
 #if defined (BEO_PCM_SPDIF) || defined (BEO_DDP)
 	Resume_Command();
