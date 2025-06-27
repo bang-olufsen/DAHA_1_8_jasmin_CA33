@@ -23,7 +23,9 @@ agree to the terms of the associated Analog Devices License Agreement.
  *************************************************************************************************/
 
 //char __argv_string[] = "";
+#if defined (BEO_PCM_SPDIF) || defined (BEO_DDP)
 int SPDIF_Enable_check = 1;
+#endif
 
 /**************************************************************************************************
  *			Global Functions Declaration Section
@@ -70,19 +72,42 @@ void main()
 	SendInitializationDone();
 
 	#ifdef BEO_Framework
-	Stop_Command();
 
 	Frmwk.Spi.PARAMETER_1 = 0x0030;
 	Tx_Rx_Mode_Command();
 
+#ifdef BEO_PCM_I2S
 	Frmwk.Spi.PARAMETER_1 = 0x0010;
 	Frmwk.Spi.PARAMETER_2 = 0x0020; // 48k,DAP = off
-	Frmwk.Spi.PARAMETER_3 = 0x0010;
+	Frmwk.Spi.PARAMETER_3 = 0x0000;
+#endif
+#ifdef BEO_MCPCM
+	Frmwk.Spi.PARAMETER_1 = 0x0410;
+	Frmwk.Spi.PARAMETER_2 = 0x0020; // 48k,DAP = off
+	Frmwk.Spi.PARAMETER_3 = 0x0000;
+#endif
+#ifdef BEO_MAT
+	Frmwk.Spi.PARAMETER_1 = 0x0910;
+	Frmwk.Spi.PARAMETER_2 = 0x0020; // 48k,DAP = off
+	Frmwk.Spi.PARAMETER_3 = 0x0000;
+#endif
+#ifdef BEO_PCM_SPDIF
+	Frmwk.Spi.PARAMETER_1 = 0x0010;
+	Frmwk.Spi.PARAMETER_2 = 0x0020; // 48k,DAP = off
+	Frmwk.Spi.PARAMETER_3 = 0x0010;	// SPDIF mode
+#endif
+#ifdef BEO_DDP
+	Frmwk.Spi.PARAMETER_1 = 0x0010;
+	Frmwk.Spi.PARAMETER_2 = 0x0020; // 48k,DAP = off
+	Frmwk.Spi.PARAMETER_3 = 0x0010;	// SPDIF mode
+#endif
 	General_Decoding_Command();
 
 	SportInitialize_Command();
+#if defined (BEO_PCM_SPDIF) || defined (BEO_DDP)
 	Resume_Command();
-	Play_Command();
+#endif
+
 
 	#endif /* BEO_Framework */
 	//Frmwk.autodetect_mode = FORCEPCM3;
@@ -98,12 +123,14 @@ void main()
 		}
 #ifdef SPDIF_MODULE
 		Spdif_Lock_check_fn();
+#if defined (BEO_PCM_SPDIF) || defined (BEO_DDP)
 		if(SPDIF_Enable_check == 1)
 		{
 			Resume_Command();
 			Play_Command();
 			SPDIF_Enable_check = 0;
 		}
+#endif
 //		spdif_status_valid_output_muted = 0;
 #endif
 #ifdef	SPI_COMMAND
