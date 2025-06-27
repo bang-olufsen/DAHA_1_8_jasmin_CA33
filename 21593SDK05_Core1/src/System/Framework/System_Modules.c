@@ -506,108 +506,108 @@ void AllocateMemoryKernel_DSD2PCM()
  *************************************************************************************************/
 void SRU_Reconfigure(int sample_fs_micro,int Output_SampleRate)
 {
-//	PCG_Clock_Divider(sample_fs_micro, Output_SampleRate);
-//
-//	if(Prev_Clock_Div_Value != Clock_Div_Value)
-//	{
-//#ifdef I2S_TDM_MODE_ENABLE
-//		if((I2S_TDM_MODE == I2S_MODE)||(I2S_TDM_MODE == ASRC_MODE)||(I2S_TDM_MODE == ASRC_TDM_MODE))
-//#endif
-//		{
-//#ifdef SPDIF_MODULE
-//			if (SPDIF_Enable == 1)
-//			{
-//				int CLKPHASE,CLKDIV;
-//
-//				CLKDIV = (4 * Spdif_fs_table[sample_fs_micro])/Spdif_fs_table[Output_SampleRate];
-//
-//				CLKPHASE = ((3+CLKDIV/2)%CLKDIV);    //To synchronize 64*fs2 with fs1 and it's falling edge with fs2
-//
-//				ADI_PCG_CLK_INFO gClkInfo_C;
-//					gClkInfo_C.eClkInput = ADI_PCG_CLK_EXT;      	      /* Clock Source */
-//					gClkInfo_C.nDiv = 0u;          					      /* Clock Divisor */
-//					gClkInfo_C.bExternalTrigger = false;                  /* External Trigger */
-//				ADI_PCG_FS_INFO gFsInfo_C;
-//					gFsInfo_C.eClkInput = (ADI_PCG_FRAMESYNC_SOURCE)ADI_PCG_FS_EXT;                     /* Clock Source */
-//					gFsInfo_C.nDiv = CLKDIV;     				              /* Frame Sync Divisor */
-//					gFsInfo_C.nPulseWidth = CLKDIV/2;                         /* Pulse Width */
-//					gFsInfo_C.nPhase = CLKPHASE;                              /* Phase */
-//					gFsInfo_C.bExternalTrigger = true;                        /* External Trigger */
-//					gFsInfo_C.eFsBypassMode = ADI_PCG_FSBYPASS_MODE_NORMAL;   /* Bypass Mode */
-//
-//				ADI_PCG_CLK_INFO gClkInfo_D;
-//					gClkInfo_D.eClkInput = ADI_PCG_CLK_EXT;      	/* Clock Source */
-//					gClkInfo_D.nDiv = 0u;          					/* Clock Divisor */
-//					gClkInfo_D.bExternalTrigger = false;            /* External Trigger */
-//				ADI_PCG_FS_INFO gFsInfo_D;
-//					gFsInfo_D.eClkInput = (ADI_PCG_FRAMESYNC_SOURCE)ADI_PCG_FS_EXT;                    /* Clock Source */
-//					gFsInfo_D.nDiv = 64*CLKDIV;     				         /* Frame Sync Divisor */
-//					gFsInfo_D.nPulseWidth = 32*CLKDIV;                       /* Pulse Width */
-//					gFsInfo_D.nPhase = FSPHASE;                              /* Phase */
-//					gFsInfo_D.bExternalTrigger = true;                       /* External Trigger */
-//					gFsInfo_D.eFsBypassMode = ADI_PCG_FSBYPASS_MODE_NORMAL;  /* Bypass Mode */
-//
-//
-//				adi_pcg_Init(ADI_PCG_DEV_C,&gClkInfo_C,&gFsInfo_C);
-//				adi_pcg_Init(ADI_PCG_DEV_D,&gClkInfo_D,&gFsInfo_D);
-//			}
-//			else
-//#endif
-//			{
-//				ADI_PCG_CLK_INFO gClkInfo;
-//				gClkInfo.eClkInput = ADI_PCG_CLK_EXT;              /* Clock Source */
-//				gClkInfo.nDiv = Clock_Div_Value/64;                /* Clock Divisor */
-//				gClkInfo.bExternalTrigger = false;                 /* External Trigger */
-//				gClkInfo.bHwTriggerCtl= false;
-//
-//				ADI_PCG_FS_INFO gFsInfo;
-//				gFsInfo.eClkInput = (ADI_PCG_FRAMESYNC_SOURCE)ADI_PCG_CLK_EXT;                   /* Clock Source */
-//				gFsInfo.nDiv = Clock_Div_Value;                        /* Frame Sync Divisor */
-//				gFsInfo.nPulseWidth = (gFsInfo.nDiv)/2u;               /* Pulse Width */
-//				gFsInfo.nPhase = gClkInfo.nDiv/2;                      /* Phase */
-//				gFsInfo.bExternalTrigger = false;                      /* External Trigger */
-//				gFsInfo.eFsBypassMode = ADI_PCG_FSBYPASS_MODE_NORMAL;  /* Bypass Mode */
-//
-//				adi_pcg_Init(ADI_PCG_DEV_C,&gClkInfo,&gFsInfo);
-//			}
-//		}
-//
-//#ifdef I2S_TDM_MODE_ENABLE
-//		else if(I2S_TDM_MODE == TDM_MODE)
-//#endif
-//		{
-//			ADI_PCG_CLK_INFO gClkInfo;
-//			gClkInfo.eClkInput = ADI_PCG_CLK_EXT;              	 /* Clock Source */
-//			gClkInfo.nDiv = Clock_Div_Value/256;                       			 /* Clock Divisor */
-//			gClkInfo.bExternalTrigger = false;                   /* External Trigger */
-//			gClkInfo.bHwTriggerCtl= false;
-//
-//			ADI_PCG_FS_INFO gFsInfo;
-//			gFsInfo.eClkInput = (ADI_PCG_FRAMESYNC_SOURCE)ADI_PCG_CLK_EXT;                	/* Clock Source */
-//			gFsInfo.nDiv = Clock_Div_Value;                                    /* Frame Sync Divisor */
-//			gFsInfo.nPulseWidth = (gFsInfo.nDiv)/256u;                /* Pulse Width */
-//			gFsInfo.nPhase = 0;                       /* Phase */
-//			gFsInfo.bExternalTrigger = false;                       /* External Trigger */
-//			gFsInfo.eFsBypassMode = ADI_PCG_FSBYPASS_MODE_NORMAL;   /* Bypass Mode */
-//
-//			adi_pcg_Init(ADI_PCG_DEV_C,&gClkInfo,&gFsInfo);
-//		}
-//#ifdef ASRC_ENABLE
-//	if((I2S_TDM_MODE == ASRC_MODE)||(I2S_TDM_MODE == ASRC_TDM_MODE))
-//	{
-//	   Asrc_SRU_Reconfigure();
-//		}
-//#endif
-//		Prev_Clock_Div_Value = Clock_Div_Value;
-//	}
-//
-//#ifdef OPTICAL_MODULE
-//	if(Prev_OutputSampleRate != Output_SampleRate)
-//	{
-//		SPI1_Init_DIT(Output_SampleRate);
-//		Prev_OutputSampleRate = Output_SampleRate;
-//	}
-//#endif
+	PCG_Clock_Divider(sample_fs_micro, Output_SampleRate);
+
+	if(Prev_Clock_Div_Value != Clock_Div_Value)
+	{
+#ifdef I2S_TDM_MODE_ENABLE
+		if((I2S_TDM_MODE == I2S_MODE)||(I2S_TDM_MODE == ASRC_MODE)||(I2S_TDM_MODE == ASRC_TDM_MODE))
+#endif
+		{
+#ifdef SPDIF_MODULE
+			if (SPDIF_Enable == 1)
+			{
+				int CLKPHASE,CLKDIV;
+
+				CLKDIV = (4 * Spdif_fs_table[sample_fs_micro])/Spdif_fs_table[Output_SampleRate];
+
+				CLKPHASE = ((3+CLKDIV/2)%CLKDIV);    //To synchronize 64*fs2 with fs1 and it's falling edge with fs2
+
+				ADI_PCG_CLK_INFO gClkInfo_C;
+					gClkInfo_C.eClkInput = ADI_PCG_CLK_EXT;      	      /* Clock Source */
+					gClkInfo_C.nDiv = 0u;          					      /* Clock Divisor */
+					gClkInfo_C.bExternalTrigger = false;                  /* External Trigger */
+				ADI_PCG_FS_INFO gFsInfo_C;
+					gFsInfo_C.eClkInput = (ADI_PCG_FRAMESYNC_SOURCE)ADI_PCG_FS_EXT;                     /* Clock Source */
+					gFsInfo_C.nDiv = CLKDIV;     				              /* Frame Sync Divisor */
+					gFsInfo_C.nPulseWidth = CLKDIV/2;                         /* Pulse Width */
+					gFsInfo_C.nPhase = CLKPHASE;                              /* Phase */
+					gFsInfo_C.bExternalTrigger = true;                        /* External Trigger */
+					gFsInfo_C.eFsBypassMode = ADI_PCG_FSBYPASS_MODE_NORMAL;   /* Bypass Mode */
+
+				ADI_PCG_CLK_INFO gClkInfo_D;
+					gClkInfo_D.eClkInput = ADI_PCG_CLK_EXT;      	/* Clock Source */
+					gClkInfo_D.nDiv = 0u;          					/* Clock Divisor */
+					gClkInfo_D.bExternalTrigger = false;            /* External Trigger */
+				ADI_PCG_FS_INFO gFsInfo_D;
+					gFsInfo_D.eClkInput = (ADI_PCG_FRAMESYNC_SOURCE)ADI_PCG_FS_EXT;                    /* Clock Source */
+					gFsInfo_D.nDiv = 64*CLKDIV;     				         /* Frame Sync Divisor */
+					gFsInfo_D.nPulseWidth = 32*CLKDIV;                       /* Pulse Width */
+					gFsInfo_D.nPhase = FSPHASE;                              /* Phase */
+					gFsInfo_D.bExternalTrigger = true;                       /* External Trigger */
+					gFsInfo_D.eFsBypassMode = ADI_PCG_FSBYPASS_MODE_NORMAL;  /* Bypass Mode */
+
+
+				adi_pcg_Init(ADI_PCG_DEV_C,&gClkInfo_C,&gFsInfo_C);
+				adi_pcg_Init(ADI_PCG_DEV_D,&gClkInfo_D,&gFsInfo_D);
+			}
+			else
+#endif
+			{
+				ADI_PCG_CLK_INFO gClkInfo;
+				gClkInfo.eClkInput = ADI_PCG_CLK_EXT;              /* Clock Source */
+				gClkInfo.nDiv = Clock_Div_Value/64;                /* Clock Divisor */
+				gClkInfo.bExternalTrigger = false;                 /* External Trigger */
+				gClkInfo.bHwTriggerCtl= false;
+
+				ADI_PCG_FS_INFO gFsInfo;
+				gFsInfo.eClkInput = (ADI_PCG_FRAMESYNC_SOURCE)ADI_PCG_CLK_EXT;                   /* Clock Source */
+				gFsInfo.nDiv = Clock_Div_Value;                        /* Frame Sync Divisor */
+				gFsInfo.nPulseWidth = (gFsInfo.nDiv)/2u;               /* Pulse Width */
+				gFsInfo.nPhase = gClkInfo.nDiv/2;                      /* Phase */
+				gFsInfo.bExternalTrigger = false;                      /* External Trigger */
+				gFsInfo.eFsBypassMode = ADI_PCG_FSBYPASS_MODE_NORMAL;  /* Bypass Mode */
+
+				adi_pcg_Init(ADI_PCG_DEV_C,&gClkInfo,&gFsInfo);
+			}
+		}
+
+#ifdef I2S_TDM_MODE_ENABLE
+		else if(I2S_TDM_MODE == TDM_MODE)
+#endif
+		{
+			ADI_PCG_CLK_INFO gClkInfo;
+			gClkInfo.eClkInput = ADI_PCG_CLK_EXT;              	 /* Clock Source */
+			gClkInfo.nDiv = Clock_Div_Value/256;                       			 /* Clock Divisor */
+			gClkInfo.bExternalTrigger = false;                   /* External Trigger */
+			gClkInfo.bHwTriggerCtl= false;
+
+			ADI_PCG_FS_INFO gFsInfo;
+			gFsInfo.eClkInput = (ADI_PCG_FRAMESYNC_SOURCE)ADI_PCG_CLK_EXT;                	/* Clock Source */
+			gFsInfo.nDiv = Clock_Div_Value;                                    /* Frame Sync Divisor */
+			gFsInfo.nPulseWidth = (gFsInfo.nDiv)/256u;                /* Pulse Width */
+			gFsInfo.nPhase = 0;                       /* Phase */
+			gFsInfo.bExternalTrigger = false;                       /* External Trigger */
+			gFsInfo.eFsBypassMode = ADI_PCG_FSBYPASS_MODE_NORMAL;   /* Bypass Mode */
+
+			adi_pcg_Init(ADI_PCG_DEV_C,&gClkInfo,&gFsInfo);
+		}
+#ifdef ASRC_ENABLE
+	if((I2S_TDM_MODE == ASRC_MODE)||(I2S_TDM_MODE == ASRC_TDM_MODE))
+	{
+	   Asrc_SRU_Reconfigure();
+	}
+#endif
+		Prev_Clock_Div_Value = Clock_Div_Value;
+	}
+
+#ifdef OPTICAL_MODULE
+	if(Prev_OutputSampleRate != Output_SampleRate)
+	{
+		SPI1_Init_DIT(Output_SampleRate);
+		Prev_OutputSampleRate = Output_SampleRate;
+	}
+#endif
 }
 /**************************************************************************************************
  *  Module Name        : PCG_Clock_Divider
