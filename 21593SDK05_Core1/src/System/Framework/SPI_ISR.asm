@@ -33,6 +33,8 @@ agree to the terms of the associated Analog Devices License Agreement.
 .extern TXSPI.;
 .extern SPI_Device.;
 
+#define DAHA_IRQ_FLAG1_PA13			0x2000		// ("FLAG1" ADI_GPIO_PORT_A ADI_GPIO_PIN_13)
+
 /******************************************************************************
 *  Module Name        : SPIReceive
 *  Functionality      : SPI receive ISR Routine
@@ -346,7 +348,7 @@ Flag_end1:
 .global FLAG_TOGGLE_ROUTINE;
 FLAG_TOGGLE_ROUTINE:
 	nop;nop;
-	
+/*	
 	 r4 = dm(SPI_Device.);
 	 r4 = pass r4;
 	 if eq jump SPI0_Device;
@@ -357,6 +359,11 @@ FLAG_TOGGLE_ROUTINE:
 	 bit set FLAGS BITM_REGF_FLAGS_FLG0;
 
 Flag_end:	  
+*/
+//#ifdef BEO_SPI_SLAVE_DAHA						// Note: Relevant for B&O code
+	 r4 = DAHA_IRQ_FLAG1_PA13;
+	 dm (REG_PORTA_DATA_SET) = r4; //CLR
+//#endif
 #ifdef MELODY9	 
 	 r4 = 0x80;
 	 dm (REG_PORTB_DATA_SET) = r4; //SET
@@ -378,7 +385,7 @@ FLAG_TOGGLE_ROUTINE.END:
 .global FLAG_TOGGLE_ROUTINE_LOW;
 FLAG_TOGGLE_ROUTINE_LOW:
 	nop;nop;
-	
+/*	
 	r4 = dm(SPI_Device.);
 	r4 = pass r4;
 	if eq jump SPI0_Device_Low;
@@ -388,7 +395,12 @@ FLAG_TOGGLE_ROUTINE_LOW:
 	SPI0_Device_Low:
 	bit clr FLAGS BITM_REGF_FLAGS_FLG0;
 
-Flag_Low_end:	  
+Flag_Low_end:	
+*/  
+//#ifdef BEO_SPI_SLAVE_DAHA						// Note: Relevant for B&O code
+	 r4 = DAHA_IRQ_FLAG1_PA13;
+	 dm (REG_PORTA_DATA_CLR) = r4; //CLR
+//#endif
 #ifdef MELODY9    
 	r4 = 0x80;
 	dm (REG_PORTB_DATA_CLR) = r4; // CLR 
