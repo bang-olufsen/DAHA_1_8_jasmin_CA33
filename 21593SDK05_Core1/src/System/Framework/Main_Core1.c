@@ -24,7 +24,7 @@ agree to the terms of the associated Analog Devices License Agreement.
 
 //char __argv_string[] = "";
 #if defined (BEO_PCM_SPDIF) || defined (BEO_DDP)
-int SPDIF_Enable_check = 1;
+int SPDIF_Enable_check = 0;
 #endif
 
 /**************************************************************************************************

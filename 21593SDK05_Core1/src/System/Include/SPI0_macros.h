@@ -31,7 +31,7 @@ agree to the terms of the associated Analog Devices License Agreement.
 		#define 	SPI0_ASSEL		1			//		0: SSEL controlled through SW,		1: SSEL controlled through HW
 		#define 	SPI0_SELST		0			//	    SSEL state between transfers
 												//		0: deasserted (high),		1: asserted (low) between transfers
-		#define 	SPI0_LSBF		1			//		0: MSB Tx/Rx first,			1: LSB Tx/Rx first
+		#define 	SPI0_LSBF		0			//		0: MSB Tx/Rx first,			1: LSB Tx/Rx first
 		#define 	SPI0_EMISO		1			//	    applicable only when slave (in transmit mode)
 												//		0: Disable MISO pin,		1: Enable MISO pin.....
 		#define		SPI0_PSSE		0			//	    Enable signaling of MODF error when configured as a master
