@@ -39,8 +39,8 @@ int Led_Toggle_Count2=0;
 #define LED2_PORT           (ADI_GPIO_PORT_B)
 #define LED2_PIN            (ADI_GPIO_PIN_8)
 
-#define FLAG1               "FLAG1"					// DAHA IRQ (Active High)
-#define FLAG1_PORT          (ADI_GPIO_PORT_A)
-#define FLAG1_PIN           (ADI_GPIO_PIN_13)
+//#define FLAG1               "FLAG1"					// DAHA IRQ (Active High)
+//#define FLAG1_PORT          (ADI_GPIO_PORT_A)
+//#define FLAG1_PIN           (ADI_GPIO_PIN_13)
 
 #endif /* GPIO_H_ */

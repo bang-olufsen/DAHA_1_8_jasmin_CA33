@@ -44,7 +44,7 @@ void Led2_Clr_Routine(void)
 
 void Initialize_Led(void)
 {
-	adi_gpio_SetDirection(FLAG1_PORT, FLAG1_PIN, ADI_GPIO_DIRECTION_OUTPUT);
+//	adi_gpio_SetDirection(FLAG1_PORT, FLAG1_PIN, ADI_GPIO_DIRECTION_OUTPUT);
 	adi_gpio_SetDirection(LED1_PORT, LED1_PIN, ADI_GPIO_DIRECTION_OUTPUT);
 	adi_gpio_SetDirection(LED2_PORT, LED2_PIN, ADI_GPIO_DIRECTION_OUTPUT);
 }

@@ -348,7 +348,7 @@ Flag_end1:
 .global FLAG_TOGGLE_ROUTINE;
 FLAG_TOGGLE_ROUTINE:
 	nop;nop;
-/*	
+	
 	 r4 = dm(SPI_Device.);
 	 r4 = pass r4;
 	 if eq jump SPI0_Device;
@@ -359,10 +359,10 @@ FLAG_TOGGLE_ROUTINE:
 	 bit set FLAGS BITM_REGF_FLAGS_FLG0;
 
 Flag_end:	  
-*/
+
 //#ifdef BEO_SPI_SLAVE_DAHA						// Note: Relevant for B&O code
-	 r4 = DAHA_IRQ_FLAG1_PA13;
-	 dm (REG_PORTA_DATA_SET) = r4; //CLR
+	// r4 = DAHA_IRQ_FLAG1_PA13;
+	// dm (REG_PORTA_DATA_SET) = r4; //CLR
 //#endif
 #ifdef MELODY9	 
 	 r4 = 0x80;
@@ -385,7 +385,7 @@ FLAG_TOGGLE_ROUTINE.END:
 .global FLAG_TOGGLE_ROUTINE_LOW;
 FLAG_TOGGLE_ROUTINE_LOW:
 	nop;nop;
-/*	
+	
 	r4 = dm(SPI_Device.);
 	r4 = pass r4;
 	if eq jump SPI0_Device_Low;
@@ -396,10 +396,10 @@ FLAG_TOGGLE_ROUTINE_LOW:
 	bit clr FLAGS BITM_REGF_FLAGS_FLG0;
 
 Flag_Low_end:	
-*/  
+
 //#ifdef BEO_SPI_SLAVE_DAHA						// Note: Relevant for B&O code
-	 r4 = DAHA_IRQ_FLAG1_PA13;
-	 dm (REG_PORTA_DATA_CLR) = r4; //CLR
+	// r4 = DAHA_IRQ_FLAG1_PA13;
+	 //dm (REG_PORTA_DATA_CLR) = r4; //CLR
 //#endif
 #ifdef MELODY9    
 	r4 = 0x80;
@@ -420,12 +420,12 @@ FLAG_TOGGLE_ROUTINE_LOW.END:
 *  Input Parameters	  : None
 *  Output Parameters  : None
 ******************************************************************************/
-.global _Flag_Toggle;
-_Flag_Toggle:
+.global _Flag_Toggle.;
+_Flag_Toggle.:
 	entry;	
 	call FLAG_TOGGLE_ROUTINE;	
 	exit;
-_Flag_Toggle.END:	
+_Flag_Toggle..END:	
 
 /******************************************************************************
 *  Module Name        : save_lbrm_reg_spi
