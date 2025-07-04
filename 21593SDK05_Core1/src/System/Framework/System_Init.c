@@ -12,7 +12,7 @@ agree to the terms of the associated Analog Devices License Agreement.
  ******************************************************************************/
 #pragma default_section(CODE,"Seg_System_Init_Code")
 #pragma default_section(ALLDATA,"Seg_System_Init_Data")
-#include "..\src\system\Include\System_Init.h"
+#include "../src/System/Include/System_Init.h"
 #include "../Include/Function_Prototype.h"
 
 /**************************************************************************************************

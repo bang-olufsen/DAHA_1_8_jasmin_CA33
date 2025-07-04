@@ -12,7 +12,7 @@ agree to the terms of the associated Analog Devices License Agreement.
 ******************************************************************************/
 #ifndef PLATFORM_H
 #define PLATFORM_H
-#include "..\src\system\Include\Commn.h"
+#include "../src/System/Include/Commn.h"
 
 /*==============Platform Definition================================================================================*/
 //#define EZKIT_PLATFORM

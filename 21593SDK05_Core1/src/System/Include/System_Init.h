@@ -37,7 +37,7 @@ agree to the terms of the associated Analog Devices License Agreement.
 #include <services/spu/adi_spu.h>
 #include <services/pcg/adi_pcg.h>
 #include <drivers/asrc/adi_asrc.h>
-#include <drivers\sport\adi_sport.h>
+#include <drivers/sport/adi_sport.h>
 #include "Def_Struct.h"
 #include "TMU_ReadTemperature.h"
 

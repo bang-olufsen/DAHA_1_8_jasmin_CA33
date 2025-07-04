@@ -12,9 +12,9 @@ agree to the terms of the associated Analog Devices License Agreement.
 ******************************************************************************/
 #include "def21593.h"
 #include "asm_sprt.h"
-.IMPORT "..\src\System\Include\Def_Struct.h";
-#include "..\src\System\Include\Commn.h"
-#include "..\src\system\Include\Extern_SPI.h"
+.IMPORT "../src/System/Include/Def_Struct.h";
+#include "../src/System/Include/Commn.h"
+#include "../src/System/Include/Extern_SPI.h"
 #ifdef CUSTOMER_PP
 .extern Predac_buffer_Cust_PP.;
 .extern struct kernel Frmwk.;

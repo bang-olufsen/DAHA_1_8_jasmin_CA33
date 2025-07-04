@@ -13,8 +13,8 @@ agree to the terms of the associated Analog Devices License Agreement.
 ******************************************************************************/
 #include "def21593.h"
 #include "asm_sprt.h"
-.IMPORT "..\src\System\Include\Def_Struct.h";
-#include "..\src\System\Include\Commn.h"
+.IMPORT "../src/System/Include/Def_Struct.h";
+#include "../src/System/Include/Commn.h"
 
 .section/DM  Seg_Sdram_Ext;
 .var save_buff[20];

@@ -17,7 +17,7 @@
 ** Product      : CrossCore Embedded Studio
 ** Tool Version : 6.2.2.5
 */
-#include "..\src\System\Include\Commn.h"
+#include "../src/System/Include/Commn.h"
 
 ARCHITECTURE(ADSP-21593)
 
@@ -566,10 +566,10 @@ ___INTBLOCK0ADDR = MEMORY_START(mem_block0_library_data);
         INPUT_SECTIONS( $OBJS_LIBS( Seg_Gpio_Code  ) ) 
         INPUT_SECTIONS( $OBJS_LIBS( Seg_Kernal_Code ) )  
         INPUT_SECTIONS( app_startup.doj (seg_pmco))
-        INPUT_SECTIONS( .\system\adi_initialize.doj(seg_swco) )
-        INPUT_SECTIONS( .\system\pinmux\GeneratedSources\pinmux_config.doj(seg_swco) )
-        INPUT_SECTIONS( .\system\sru\sru_config.doj(seg_swco) )
-        INPUT_SECTIONS( src\system\Framework\ConfigSoftSwitches_EV_21593_SOM.doj (seg_swco) )
+        INPUT_SECTIONS( ./system/adi_initialize.doj(seg_swco) )
+        INPUT_SECTIONS( ./system/pinmux/GeneratedSources/pinmux_config.doj(seg_swco) )
+        INPUT_SECTIONS( ./system/sru/sru_config.doj(seg_swco) )
+        INPUT_SECTIONS( src/system/Framework/ConfigSoftSwitches_EV_21593_SOM.doj (seg_swco) )
       } > mem_block3_Kernal
       /*$VDSG<insert-new-sections-for-l1_block1>                */
       /* Text inserted between these $VDSG comments will be preserved */
@@ -655,7 +655,7 @@ ___INTBLOCK0ADDR = MEMORY_START(mem_block0_library_data);
       {
          INPUT_SECTION_ALIGN(4)
          INPUT_SECTIONS( $OBJS_LIBS(seg_int_str) )      
-         INPUT_SECTIONS( .\system\startup_ldf\app_heaptab.doj(seg_dmda) )       
+         INPUT_SECTIONS( ./system/startup_ldf/app_heaptab.doj(seg_dmda) )       
       } > mem_block0_bw
           
 
@@ -677,7 +677,7 @@ ___INTBLOCK0ADDR = MEMORY_START(mem_block0_library_data);
         INPUT_SECTIONS(  adi_pdma_2156x.doj(seg_swco) ) 
         INPUT_SECTIONS( libosal_noos.dlb  (seg_swco) )
         INPUT_SECTIONS( libosal_noos.dlb  (seg_pmco) )
-	INPUT_SECTIONS( system\services\spu\adi_spu.doj (seg_swco) )
+	INPUT_SECTIONS( system/services/spu/adi_spu.doj (seg_swco) )
       } > mem_block1_Kernal_code
       
       Driver_Data_Block2 BW
@@ -1206,13 +1206,13 @@ ___INTBLOCK0ADDR = MEMORY_START(mem_block0_library_data);
 	#ifdef DTSX_DAP
 	INPUT_SECTIONS( $OBJS_LIBS(Seg_DTSx_DAP_CrossUpmix_Code))
 	#endif
-	INPUT_SECTIONS( system\drivers\sport\adi_sport.doj (seg_swco) )	    
-	INPUT_SECTIONS( system\services\dai\adi_dai.doj (seg_swco) )   
-	INPUT_SECTIONS( system\services\gpio\adi_gpio.doj (seg_swco) ) 
-	INPUT_SECTIONS( system\services\int\adi_int.doj (seg_swco) ) 
-	INPUT_SECTIONS( system\services\int\adi_sec.doj (seg_swco) )
-	INPUT_SECTIONS( system\services\pcg\adi_pcg.doj (seg_swco) )
-	INPUT_SECTIONS( system\services\pwr\adi_pwr.doj (seg_swco) )	    
+	INPUT_SECTIONS( system/drivers/sport/adi_sport.doj (seg_swco) )	    
+	INPUT_SECTIONS( system/services/dai/adi_dai.doj (seg_swco) )   
+	INPUT_SECTIONS( system/services/gpio/adi_gpio.doj (seg_swco) ) 
+	INPUT_SECTIONS( system/services/int/adi_int.doj (seg_swco) ) 
+	INPUT_SECTIONS( system/services/int/adi_sec.doj (seg_swco) )
+	INPUT_SECTIONS( system/services/pcg/adi_pcg.doj (seg_swco) )
+	INPUT_SECTIONS( system/services/pwr/adi_pwr.doj (seg_swco) )	    
     } > MY_SDRAM_KERNEL_CODE_MEM 
             
       LIBC_segment_code SW
@@ -1539,14 +1539,14 @@ LIBC_segment_data BW
          INPUT_SECTIONS( SPI1_Optical.doj (seg_dmda) )         
 	     INPUT_SECTIONS( $OBJS_LIBS(seg_gpio_data))	
 		 INPUT_SECTIONS( $OBJS_LIBS(Seg_Optical_Data seg_PCM_data) )
-		 INPUT_SECTIONS( system\services\pwr\adi_pwr.doj (seg_dmda) )
-		 INPUT_SECTIONS( system\services\dai\adi_dai.doj (seg_dmda) )
-		 INPUT_SECTIONS( system\services\gpio\adi_gpio.doj(seg_dmda))
-		 INPUT_SECTIONS( src\system\Framework\ConfigSoftSwitches_EV_21593_SOM.doj (seg_dmda) )
-		 INPUT_SECTIONS( system\drivers\twi\adi_twi.doj (seg_dmda) ) 
-		 INPUT_SECTIONS( system\services\int\adi_sec.doj (seg_dmda) )
-		 INPUT_SECTIONS( system\drivers\spdif\adi_spdif_rx_v1.doj (seg_dmda) )
-		 INPUT_SECTIONS( system\drivers\asrc\adi_asrc.doj (seg_dmda) )	
+		 INPUT_SECTIONS( system/services/pwr/adi_pwr.doj (seg_dmda) )
+		 INPUT_SECTIONS( system/services/dai/adi_dai.doj (seg_dmda) )
+		 INPUT_SECTIONS( system/services/gpio/adi_gpio.doj(seg_dmda))
+		 INPUT_SECTIONS( src/system/Framework/ConfigSoftSwitches_EV_21593_SOM.doj (seg_dmda) )
+		 INPUT_SECTIONS( system/drivers/twi/adi_twi.doj (seg_dmda) ) 
+		 INPUT_SECTIONS( system/services/int/adi_sec.doj (seg_dmda) )
+		 INPUT_SECTIONS( system/drivers/spdif/adi_spdif_rx_v1.doj (seg_dmda) )
+		 INPUT_SECTIONS( system/drivers/asrc/adi_asrc.doj (seg_dmda) )	
 		 INPUT_SECTIONS( $OBJS_LIBS(Seg_Data_Buf seg_DS_kernal_data) )
 		 #ifdef DTSX_DAP
 		 INPUT_SECTIONS( $OBJS_LIBS(Seg_DTSx_DAP_CrossUpmix_data))
@@ -1888,13 +1888,13 @@ LIBC_segment_data BW
       CUST_DATA_L3_BW BW
       {
          INPUT_SECTION_ALIGN(4)	    		
-	     INPUT_SECTIONS( Customer_PP\Customer_PP.doj (seg_dmda) )
+	     INPUT_SECTIONS( Customer_PP/Customer_PP.doj (seg_dmda) )
       } > MY_SDRAM_CUSTPP_DATA_A6
       
       CUST_DATA_L3_DM DM
       {
          INPUT_SECTION_ALIGN(4)	    		
-	     INPUT_SECTIONS( Customer_PP\Customer_PP.doj (seg_dmda) )
+	     INPUT_SECTIONS( Customer_PP/Customer_PP.doj (seg_dmda) )
       } > MY_SDRAM_CUSTPP_DATA_A6
       /*
       LIBC_segment_data BW

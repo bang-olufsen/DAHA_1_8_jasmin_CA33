@@ -22,7 +22,7 @@ agree to the terms of the associated Analog Devices License Agreement.
 #include <cdef21593.h>
 #include "Init_Struct.h"
 #include <sys/cache.h>
-#include <drivers\sport\adi_sport.h>
+#include <drivers/sport/adi_sport.h>
 #include <drivers/spdif/adi_spdif_rx_v1.h>
 #include <services/dma/adi_dma.h>
 

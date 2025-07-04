@@ -18,7 +18,7 @@ agree to the terms of the associated Analog Devices License Agreement.
  *
  */
 
-#include <drivers\twi\adi_twi.h>
+#include <drivers/twi/adi_twi.h>
 
 /* TWI settings */
 #define TWI_PRESCALE  (12u)

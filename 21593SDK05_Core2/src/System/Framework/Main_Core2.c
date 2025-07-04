@@ -13,9 +13,9 @@ agree to the terms of the associated Analog Devices License Agreement.
 #include <stdlib.h>
 #pragma default_section(CODE,"Seg_Main_Core2")
 #include <services/int/adi_int.h>
-#include "..\src\System\Include\Main_Core2.h"
-#include "..\src\System\Include\Function_Prototype.h"
-#include "..\src\System\Include\Extern_Core2.h"
+#include "../src/System/Include/Main_Core2.h"
+#include "../src/System/Include/Function_Prototype.h"
+#include "../src/System/Include/Extern_Core2.h"
 
 /** 
  * If you want to use command program arguments, then place them in the following string. 

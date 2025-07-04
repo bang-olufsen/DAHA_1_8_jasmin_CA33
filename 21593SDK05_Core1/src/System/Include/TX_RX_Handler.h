@@ -17,7 +17,7 @@ agree to the terms of the associated Analog Devices License Agreement.
 #include "Commn.h"
 #include "Extern_Core1.h"
 #include <services/dma/adi_dma.h>
-#include <drivers\sport\adi_sport.h>
+#include <drivers/sport/adi_sport.h>
 #include "string.h"
 #include "Def_Struct.h"
 #pragma default_section(DATA,"Seg_TX_RX_Handler_Data")

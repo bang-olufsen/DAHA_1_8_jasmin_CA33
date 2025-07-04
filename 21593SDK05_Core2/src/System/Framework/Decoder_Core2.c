@@ -13,8 +13,8 @@ agree to the terms of the associated Analog Devices License Agreement.
 ******************************************************************************/
 /******************************************************************************/
 #pragma default_section(CODE,"Seg_Decoder_Core2")
-#include "..\src\System\Include\Decoder_Core2.h"
-#include "..\src\System\Include\Function_Prototype.h"
+#include "../src/System/Include/Decoder_Core2.h"
+#include "../src/System/Include/Function_Prototype.h"
 
 /******************************************************************************
 *  Module Name        : PlayForgnd

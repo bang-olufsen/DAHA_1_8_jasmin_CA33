@@ -12,7 +12,7 @@ agree to the terms of the associated Analog Devices License Agreement.
 ******************************************************************************/
 #pragma default_section(CODE,"Seg_SPI_Func_Code")
 
-#include "..\src\system\Include\Common_macros__extern_definations.h"
+#include "../src/System/Include/Common_macros__extern_definations.h"
 #include "stdio.h"
 #include "../Include/Function_Prototype.h"
 #pragma default_section(ALLDATA,"Seg_SPI_Func_Data")

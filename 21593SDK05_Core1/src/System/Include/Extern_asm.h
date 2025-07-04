@@ -14,7 +14,7 @@ agree to the terms of the associated Analog Devices License Agreement.
 #ifndef EXTERN_ASM_H
 #define EXTERN_ASM_H
 
-#include "..\src\system\Include\Commn.h"
+#include "../src/System/Include/Commn.h"
 /*****************************************************************************
 	Framework Modules
 *****************************************************************************/	
