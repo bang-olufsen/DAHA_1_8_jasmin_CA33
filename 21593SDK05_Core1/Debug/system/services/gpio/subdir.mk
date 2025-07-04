@@ -17,7 +17,7 @@ C_DEPS += \
 system/services/gpio/adi_gpio.doj: C:/analog/cces/3.0.2/SHARC/lib/src/services/Source/gpio/adi_gpio.c
 	@echo 'Building file: $<'
 	@echo 'Invoking: CrossCore SHARC C/C++ Compiler'
-	cc21k -c -file-attr ProjectName="21593SDK05_Core1" -proc ADSP-21593 -flags-compiler --no_wrap_diagnostics -si-revision any -O -Ov100 -g -DCORE1 -D_DEBUG -DADI_DEBUG @includes-69cc20d3fa6495fa367c04bbc7ade3f1.txt -structs-do-not-overlap -no-const-strings -no-multiline -warn-protos -double-size-32 -char-size-8 -swc -gnu-style-dependencies -MD -Mo "system/services/gpio/adi_gpio.d" -o "$@" "$<"
+	cc21k -c -file-attr ProjectName="21593SDK05_Core1" -proc ADSP-21593 -flags-compiler --no_wrap_diagnostics -si-revision any -O -Ov100 -g -DCORE1 -D_DEBUG -DADI_DEBUG @includes-20c5ddc32ea027188962c6c2deb03d18.txt -structs-do-not-overlap -no-const-strings -no-multiline -warn-protos -double-size-32 -char-size-8 -swc -gnu-style-dependencies -MD -Mo "system/services/gpio/adi_gpio.d" -o "$@" "$<"
 	@echo 'Finished building: $<'
 	@echo ' '
 

@@ -514,7 +514,7 @@ void SRU_Reconfigure(int sample_fs_micro,int Output_SampleRate)
 		if((I2S_TDM_MODE == I2S_MODE)||(I2S_TDM_MODE == ASRC_MODE)||(I2S_TDM_MODE == ASRC_TDM_MODE))
 #endif
 		{
-#ifdef SPDIF_MODULE
+#ifndef SPDIF_MODULE
 			if (SPDIF_Enable == 1)
 			{
 				int CLKPHASE,CLKDIV;
@@ -556,13 +556,13 @@ void SRU_Reconfigure(int sample_fs_micro,int Output_SampleRate)
 			{
 				ADI_PCG_CLK_INFO gClkInfo;
 				gClkInfo.eClkInput = ADI_PCG_CLK_EXT;              /* Clock Source */
-				gClkInfo.nDiv = Clock_Div_Value/64;                /* Clock Divisor */
+				gClkInfo.nDiv = 1;//Clock_Div_Value/64;                /* Clock Divisor */
 				gClkInfo.bExternalTrigger = false;                 /* External Trigger */
 				gClkInfo.bHwTriggerCtl= false;
 
 				ADI_PCG_FS_INFO gFsInfo;
 				gFsInfo.eClkInput = (ADI_PCG_FRAMESYNC_SOURCE)ADI_PCG_CLK_EXT;                   /* Clock Source */
-				gFsInfo.nDiv = Clock_Div_Value;                        /* Frame Sync Divisor */
+				gFsInfo.nDiv = 64;//Clock_Div_Value;                        /* Frame Sync Divisor */
 				gFsInfo.nPulseWidth = (gFsInfo.nDiv)/2u;               /* Pulse Width */
 				gFsInfo.nPhase = gClkInfo.nDiv/2;                      /* Phase */
 				gFsInfo.bExternalTrigger = false;                      /* External Trigger */

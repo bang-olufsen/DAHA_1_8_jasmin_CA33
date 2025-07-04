@@ -127,8 +127,6 @@ void main()
 #if defined (BEO_PCM_SPDIF) || defined (BEO_DDP)
 	Resume_Command();
 #endif
-
-
 	#endif /* BEO_Framework */
 	//Frmwk.autodetect_mode = FORCEPCM3;
 	while(1)
