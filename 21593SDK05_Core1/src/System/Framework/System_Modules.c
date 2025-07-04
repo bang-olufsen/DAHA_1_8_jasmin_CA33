@@ -556,13 +556,13 @@ void SRU_Reconfigure(int sample_fs_micro,int Output_SampleRate)
 			{
 				ADI_PCG_CLK_INFO gClkInfo;
 				gClkInfo.eClkInput = ADI_PCG_CLK_EXT;              /* Clock Source */
-				gClkInfo.nDiv = 1;//Clock_Div_Value/64;                /* Clock Divisor */
+				gClkInfo.nDiv = Clock_Div_Value/64;                /* Clock Divisor */
 				gClkInfo.bExternalTrigger = false;                 /* External Trigger */
 				gClkInfo.bHwTriggerCtl= false;
 
 				ADI_PCG_FS_INFO gFsInfo;
 				gFsInfo.eClkInput = (ADI_PCG_FRAMESYNC_SOURCE)ADI_PCG_CLK_EXT;                   /* Clock Source */
-				gFsInfo.nDiv = 64;//Clock_Div_Value;                        /* Frame Sync Divisor */
+				gFsInfo.nDiv = Clock_Div_Value;                        /* Frame Sync Divisor */
 				gFsInfo.nPulseWidth = (gFsInfo.nDiv)/2u;               /* Pulse Width */
 				gFsInfo.nPhase = gClkInfo.nDiv/2;                      /* Phase */
 				gFsInfo.bExternalTrigger = false;                      /* External Trigger */
@@ -635,15 +635,15 @@ void PCG_Clock_Divider(int sample_fs_micro,int Output_SampleRate)
 
 		if((sample_fs_micro == FS_48K)||(sample_fs_micro == FS_44K)||(sample_fs_micro == FS_32K))
 		{
-			Clock_Div_Value = ((Freq_Table_SRU[sample_fs_micro]*Mclk_48Khz)/Freq_Table_SRU[Output_SampleRate]);
+			Clock_Div_Value = ((Freq_Table_SRU[sample_fs_micro]*BEO_CLK_DIV)/Freq_Table_SRU[Output_SampleRate]);
 		}
 		else if((sample_fs_micro == FS_96K)||(sample_fs_micro == FS_88K)||(sample_fs_micro == FS_64K))
 		{
-			Clock_Div_Value = (Freq_Table_SRU[sample_fs_micro]*Mclk_96Khz)/Freq_Table_SRU[Output_SampleRate];
+			Clock_Div_Value = (Freq_Table_SRU[sample_fs_micro]*BEO_CLK_DIV)/Freq_Table_SRU[Output_SampleRate];
 		}
 		else if((sample_fs_micro == FS_192K)||(sample_fs_micro == FS_176K)||(sample_fs_micro == FS_128K))
 		{
-			Clock_Div_Value = (Freq_Table_SRU[sample_fs_micro]*Mclk_192Khz)/Freq_Table_SRU[Output_SampleRate];
+			Clock_Div_Value = (Freq_Table_SRU[sample_fs_micro]*BEO_CLK_DIV)/Freq_Table_SRU[Output_SampleRate];
 		}
 
 	}
