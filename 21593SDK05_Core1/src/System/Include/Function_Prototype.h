@@ -378,4 +378,5 @@ void Spdif_Rx_Fs_conversion(int);
 void Spdif_Lock_check_fn();
 void Spdif_Input_lock_check();
 #endif
+void _Flag_Toggle(void);
 	#endif /* FUNCTION_PROTOTYPE_H_ */

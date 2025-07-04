@@ -762,7 +762,7 @@ void SendIRQInterrupt(void)
 
 	if(Frmwk.cmd_result!=2)
 	{
-		Flag_Toggle();
+		_Flag_Toggle();
 	}
 
 	Frmwk.cmd_result = 0;

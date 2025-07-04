@@ -844,13 +844,13 @@ void PCG_Init(void)
 //	{
 		ADI_PCG_CLK_INFO gClkInfo_C;
 		gClkInfo_C.eClkInput = ADI_PCG_CLK_EXT;                /* Clock Source */
-		gClkInfo_C.nDiv = Mclk_48Khz/64;                                  /* Clock Divisor */
+		gClkInfo_C.nDiv = BEO_CLK_DIV/64;                                  /* Clock Divisor */
 		gClkInfo_C.bExternalTrigger = false;                   /* External Trigger */
 		gClkInfo_C.bHwTriggerCtl= false;
 
 		ADI_PCG_FS_INFO gFsInfo_C;
 		gFsInfo_C.eClkInput = (ADI_PCG_FRAMESYNC_SOURCE)ADI_PCG_CLK_EXT;                	  /* Clock Source */
-		gFsInfo_C.nDiv = Mclk_48Khz;                                    /* Frame Sync Divisor */
+		gFsInfo_C.nDiv = BEO_CLK_DIV;                                    /* Frame Sync Divisor */
 		gFsInfo_C.nPulseWidth = (gFsInfo_C.nDiv)/2u;              /* Pulse Width */
 		gFsInfo_C.nPhase = gClkInfo_C.nDiv/2;                     /* Phase */
 		gFsInfo_C.bExternalTrigger = false;                       /* External Trigger */

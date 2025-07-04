@@ -514,7 +514,7 @@ void SRU_Reconfigure(int sample_fs_micro,int Output_SampleRate)
 		if((I2S_TDM_MODE == I2S_MODE)||(I2S_TDM_MODE == ASRC_MODE)||(I2S_TDM_MODE == ASRC_TDM_MODE))
 #endif
 		{
-#ifdef SPDIF_MODULE
+#ifndef SPDIF_MODULE
 			if (SPDIF_Enable == 1)
 			{
 				int CLKPHASE,CLKDIV;
@@ -635,15 +635,15 @@ void PCG_Clock_Divider(int sample_fs_micro,int Output_SampleRate)
 
 		if((sample_fs_micro == FS_48K)||(sample_fs_micro == FS_44K)||(sample_fs_micro == FS_32K))
 		{
-			Clock_Div_Value = ((Freq_Table_SRU[sample_fs_micro]*Mclk_48Khz)/Freq_Table_SRU[Output_SampleRate]);
+			Clock_Div_Value = ((Freq_Table_SRU[sample_fs_micro]*BEO_CLK_DIV)/Freq_Table_SRU[Output_SampleRate]);
 		}
 		else if((sample_fs_micro == FS_96K)||(sample_fs_micro == FS_88K)||(sample_fs_micro == FS_64K))
 		{
-			Clock_Div_Value = (Freq_Table_SRU[sample_fs_micro]*Mclk_96Khz)/Freq_Table_SRU[Output_SampleRate];
+			Clock_Div_Value = (Freq_Table_SRU[sample_fs_micro]*BEO_CLK_DIV)/Freq_Table_SRU[Output_SampleRate];
 		}
 		else if((sample_fs_micro == FS_192K)||(sample_fs_micro == FS_176K)||(sample_fs_micro == FS_128K))
 		{
-			Clock_Div_Value = (Freq_Table_SRU[sample_fs_micro]*Mclk_192Khz)/Freq_Table_SRU[Output_SampleRate];
+			Clock_Div_Value = (Freq_Table_SRU[sample_fs_micro]*BEO_CLK_DIV)/Freq_Table_SRU[Output_SampleRate];
 		}
 
 	}
