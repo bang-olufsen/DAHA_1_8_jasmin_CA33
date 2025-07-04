@@ -13,7 +13,7 @@ agree to the terms of the associated Analog Devices License Agreement.
 ******************************************************************************/
 #include <System/Include/Def_Struct.h>
 #include "Customer_PP.h"
-#include "..\src\System\Include\Extern_Core2.h"
+#include "../src/System/Include/Extern_Core2.h"
 
 #pragma default_section(CODE,"Seg_CustomerPP_Code")
 #pragma default_section(DATA,"Seg_CustomerPP_Data")

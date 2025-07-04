@@ -17,7 +17,7 @@
 ** Product      : CrossCore Embedded Studio
 ** Tool Version : 6.2.2.5
 */
-#include "..\src\System\Include\Commn.h"
+#include "../src/System/Include/Commn.h"
 ARCHITECTURE(ADSP-21593)
 
 /*
@@ -334,7 +334,7 @@ PROCESSOR 21593_CORE_2
 	  	 INPUT_SECTIONS( $OBJS_LIBS (Seg_Init_Struct_Core2) )
 	  	 INPUT_SECTIONS( $OBJS_LIBS (Seg_Main_Core2) )
 	  	 INPUT_SECTIONS( app_startup.doj (seg_pmco))
-	  	 INPUT_SECTIONS( system\adi_initialize.doj(seg_swco) ) 
+	  	 INPUT_SECTIONS( system/adi_initialize.doj(seg_swco) ) 
       } > mem_block0_kernal_code
 
       Kernal_data_bw BW
@@ -343,7 +343,7 @@ PROCESSOR 21593_CORE_2
          INPUT_SECTION_ALIGN(4)
          INPUT_SECTIONS( $OBJS_LIBS( seg_kernal_data_align32) )
          INPUT_SECTIONS( $OBJS_LIBS( seg_int_data) )  
-         INPUT_SECTIONS( .\system\startup_ldf\app_heaptab.doj(seg_dmda) )      
+         INPUT_SECTIONS( /system/startup_ldf/app_heaptab.doj(seg_dmda) )      
       } > mem_block0_Kernal_data
     // ------------------------------------------------------------------
     // Block 1 is primarily used for the DM data and DM cache.
@@ -636,8 +636,8 @@ PROCESSOR 21593_CORE_2
       {
         INPUT_SECTION_ALIGN(2)
         INPUT_SECTIONS( $OBJS_LIBS(Seg_KERNAL_Code_L3 ) )   
-        INPUT_SECTIONS( services\pdma\adi_pdma_2156x.doj (seg_swco) )
-        INPUT_SECTIONS( system\mcapi\GeneratedSources\mcapi_config.doj(seg_swco))    
+        INPUT_SECTIONS( services/pdma/adi_pdma_2156x.doj (seg_swco) )
+        INPUT_SECTIONS( system/mcapi/GeneratedSources/mcapi_config.doj(seg_swco))    
       } > MY_SDRAM_KERNEL_CODE_MEM
       
       KERNEL_DATA_L3_DM DM
@@ -651,15 +651,15 @@ PROCESSOR 21593_CORE_2
       {
          INPUT_SECTION_ALIGN(4)
 		 INPUT_SECTIONS( $OBJS_LIBS(Seg_KERNAL_Data_L3) )
-		 INPUT_SECTIONS( services\pdma\adi_pdma_2156x.doj (seg_dmda) )
-		 INPUT_SECTIONS( system\mcapi\GeneratedSources\mcapi_config.doj(seg_dmda))  
+		 INPUT_SECTIONS( services/pdma/adi_pdma_2156x.doj (seg_dmda) )
+		 INPUT_SECTIONS( system/mcapi/GeneratedSources/mcapi_config.doj(seg_dmda))  
       } > MY_SDRAM_KERNEL_DATA_MEM 
       
       CUST_PP_DATA_L3_bw BW
       {
          INPUT_SECTION_ALIGN(4)
 		 INPUT_SECTIONS( $OBJS_LIBS(Seg_CustomerPP_Data) )
-		 INPUT_SECTIONS( Customer_PP\Customer_PP.doj (seg_dmda) )
+		 INPUT_SECTIONS( Customer_PP/Customer_PP.doj (seg_dmda) )
       } >MY_SDRAM_CUSTPP_DATA_MEM
        
         

@@ -12,7 +12,7 @@ agree to the terms of the associated Analog Devices License Agreement.
  ******************************************************************************/
 #pragma default_section(CODE,"Seg_TX_RX_Handler_Code")
 #pragma default_section(ALLDATA,"Seg_TX_RX_Handler_Data")
-#include "..\src\system\Include\TX_RX_Handler.h"
+#include "../src/System/Include/TX_RX_Handler.h"
 #include <cdef21593.h>
 #include "../Include/Function_Prototype.h"
 

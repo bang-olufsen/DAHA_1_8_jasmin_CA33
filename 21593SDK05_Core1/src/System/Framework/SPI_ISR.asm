@@ -13,16 +13,16 @@ agree to the terms of the associated Analog Devices License Agreement.
 ******************************************************************************/
 #include <def21593.h>
 #include <asm_sprt.h>
-#include "..\src\system\Include\HostDefines.h"
-#include "..\src\system\Include\Extern_SPI.h"
-#include "..\src\system\Include\Platform_Defines.h"
+#include "../src/System/Include/HostDefines.h"
+#include "../src/System/Include/Extern_SPI.h"
+#include "../src/System/Include/Platform_Defines.h"
 
 .segment/dm Seg_Kernal_Data;
 .var Tag_Location32[4];
 .global Tag_Location32;
 
 .endseg;
-.IMPORT "..\src\system\Include\Def_Struct.h";
+.IMPORT "../src/System/Include/Def_Struct.h";
 .extern struct kernel Frmwk.;
 .extern Tag_Location32.;
 .extern PARAMETER_1_C2.;

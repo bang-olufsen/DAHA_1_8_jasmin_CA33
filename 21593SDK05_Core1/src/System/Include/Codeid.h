@@ -23,7 +23,7 @@ agree to the terms of the associated Analog Devices License Agreement.
 #ifndef CODEID_H_
 #define CODEID_H_
 
-#include "..\src\system\Include\Commn.h"
+#include "../src/System/Include/Commn.h"
 
 #define DTSSYNCSIG1SHUFFLED	    0x7ffe
 #define DTSSYNCSIG2SHUFFLED	    0x1fff
