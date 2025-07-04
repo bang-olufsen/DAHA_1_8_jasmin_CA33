@@ -14,7 +14,7 @@ agree to the terms of the associated Analog Devices License Agreement.
 #ifndef INIT_STRUCT_H_
 #define INIT_STRUCT_H_
 
-#include "commn.h"
+#include "Commn.h"
 #include "Def_Struct.h"
 
 #pragma section("Seg_Kernal_Data")

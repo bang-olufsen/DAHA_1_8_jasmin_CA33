@@ -13,7 +13,7 @@
 #ifndef _MAIN_H_
 #define _MAIN_H_
 
-//#include "commn.h"
+//#include "Commn.h"
 
 //#ifdef DSD2PCM_DEC
 

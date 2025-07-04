@@ -13,7 +13,7 @@ agree to the terms of the associated Analog Devices License Agreement.
 #ifndef EXTERN_CORE1_H_
 #define EXTERN_CORE1_H_
 
-#include "commn.h"
+#include "Commn.h"
 extern int Center_Downmix_Flag;
 extern int ext_dnmix_flag;
 extern int AuroEngine_Enable_cmd;
