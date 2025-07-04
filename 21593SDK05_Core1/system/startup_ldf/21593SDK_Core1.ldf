@@ -569,7 +569,7 @@ ___INTBLOCK0ADDR = MEMORY_START(mem_block0_library_data);
         INPUT_SECTIONS( ./system/adi_initialize.doj(seg_swco) )
         INPUT_SECTIONS( ./system/pinmux/GeneratedSources/pinmux_config.doj(seg_swco) )
         INPUT_SECTIONS( ./system/sru/sru_config.doj(seg_swco) )
-        INPUT_SECTIONS( src/system/Framework/ConfigSoftSwitches_EV_21593_SOM.doj (seg_swco) )
+        INPUT_SECTIONS( src/System/Framework/ConfigSoftSwitches_EV_21593_SOM.doj (seg_swco) )
       } > mem_block3_Kernal
       /*$VDSG<insert-new-sections-for-l1_block1>                */
       /* Text inserted between these $VDSG comments will be preserved */
@@ -1542,7 +1542,7 @@ LIBC_segment_data BW
 		 INPUT_SECTIONS( system/services/pwr/adi_pwr.doj (seg_dmda) )
 		 INPUT_SECTIONS( system/services/dai/adi_dai.doj (seg_dmda) )
 		 INPUT_SECTIONS( system/services/gpio/adi_gpio.doj(seg_dmda))
-		 INPUT_SECTIONS( src/system/Framework/ConfigSoftSwitches_EV_21593_SOM.doj (seg_dmda) )
+		 INPUT_SECTIONS( src/System/Framework/ConfigSoftSwitches_EV_21593_SOM.doj (seg_dmda) )
 		 INPUT_SECTIONS( system/drivers/twi/adi_twi.doj (seg_dmda) ) 
 		 INPUT_SECTIONS( system/services/int/adi_sec.doj (seg_dmda) )
 		 INPUT_SECTIONS( system/drivers/spdif/adi_spdif_rx_v1.doj (seg_dmda) )
