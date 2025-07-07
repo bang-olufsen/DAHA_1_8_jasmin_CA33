@@ -1,0 +1,3 @@
+-I"C:/Repo/DAHA_1_8_jasmin_CA33/21593SDK05_Core1/system"
+-I"C:/Repo/DAHA_1_8_jasmin_CA33/21593SDK05_Core1/src/System/Include"
+-I"C:/Repo/DAHA_1_8_jasmin_CA33/21593SDK05_Core1/src/AudioAlgorithms/PostProcessing/AU_ENG"

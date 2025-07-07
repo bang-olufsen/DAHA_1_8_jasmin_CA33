@@ -1,8 +1,8 @@
 src/System/Framework/SPI_ISR.doj: ../src/System/Framework/SPI_ISR.asm
-src/System/Framework/SPI_ISR.doj: ../src/system/Include/Commn.h
-src/System/Framework/SPI_ISR.doj: ../src/system/Include/Extern_SPI.h
-src/System/Framework/SPI_ISR.doj: ../src/system/Include/HostDefines.h
-src/System/Framework/SPI_ISR.doj: ../src/system/Include/Platform_Defines.h
+src/System/Framework/SPI_ISR.doj: ../src/System/Include/Commn.h
+src/System/Framework/SPI_ISR.doj: ../src/System/Include/Extern_SPI.h
+src/System/Framework/SPI_ISR.doj: ../src/System/Include/HostDefines.h
+src/System/Framework/SPI_ISR.doj: ../src/System/Include/Platform_Defines.h
 src/System/Framework/SPI_ISR.doj: ../../../../analog/cces/3.0.2/SHARC/include/asm_sprt.h
 src/System/Framework/SPI_ISR.doj: ../../../../analog/cces/3.0.2/SHARC/include/def21593.h
 src/System/Framework/SPI_ISR.doj: ../../../../analog/cces/3.0.2/SHARC/include/sys/ADSP-21593.h
@@ -10,5 +10,5 @@ src/System/Framework/SPI_ISR.doj: ../../../../analog/cces/3.0.2/SHARC/include/sy
 src/System/Framework/SPI_ISR.doj: ../../../../analog/cces/3.0.2/SHARC/include/sys/ADSP_SC5xx_legacy.h
 src/System/Framework/SPI_ISR.doj: ../../../../analog/cces/3.0.2/SHARC/include/sys/anomaly_macros_rtl.h
 src/System/Framework/SPI_ISR.doj: ../../../../analog/cces/3.0.2/SHARC/include/sys/defSC59x_id_macros.h
-src/System/Framework/SPI_ISR.doj: ../src/system/Include/Def_Struct.h
-src/System/Framework/SPI_ISR.doj: ../src/system/Include/Commn.h
+src/System/Framework/SPI_ISR.doj: ../src/System/Include/Def_Struct.h
+src/System/Framework/SPI_ISR.doj: ../src/System/Include/Commn.h

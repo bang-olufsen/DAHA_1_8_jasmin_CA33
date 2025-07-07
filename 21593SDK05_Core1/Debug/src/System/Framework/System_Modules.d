@@ -2,7 +2,7 @@ src/System/Framework/System_Modules.doj: ../src/System/Framework/System_Modules.
 src/System/Framework/System_Modules.doj: ../src/System/Framework/../Include/System_Modules.h
 src/System/Framework/System_Modules.doj: ../src/System/Framework/../Include/Commn.h
 src/System/Framework/System_Modules.doj: ../src/System/Framework/../Include/Extern_Core1.h
-src/System/Framework/System_Modules.doj: ../src/System/Framework/../Include/commn.h
+src/System/Framework/System_Modules.doj: ../src/System/Framework/../Include/Commn.h
 src/System/Framework/System_Modules.doj: ../../../../analog/cces/3.0.2/SHARC/include/math.h
 src/System/Framework/System_Modules.doj: ../../../../analog/cces/3.0.2/SHARC/include/math_21xxx.h
 src/System/Framework/System_Modules.doj: ../../../../analog/cces/3.0.2/SHARC/include/builtins.h
@@ -11,7 +11,7 @@ src/System/Framework/System_Modules.doj: ../../../../analog/cces/3.0.2/SHARC/inc
 src/System/Framework/System_Modules.doj: ../../../../analog/cces/3.0.2/SHARC/include/stdio_21xxx.h
 src/System/Framework/System_Modules.doj: ../src/System/Framework/../Include/HostDefines.h
 src/System/Framework/System_Modules.doj: ../src/System/Framework/../Include/Codeid.h
-src/System/Framework/System_Modules.doj: ../src/system/Include/Commn.h
+src/System/Framework/System_Modules.doj: ../src/System/Include/Commn.h
 src/System/Framework/System_Modules.doj: ../../../../analog/cces/3.0.2/SHARC/include/services/pcg/adi_pcg.h
 src/System/Framework/System_Modules.doj: ../../../../analog/cces/3.0.2/SHARC/include/services/pcg/adi_pcg_v1.h
 src/System/Framework/System_Modules.doj: ../../../../analog/cces/3.0.2/SHARC/include/stdint.h

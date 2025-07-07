@@ -26,7 +26,7 @@ src/System/Framework/Main_Core1.doj: ../../../../analog/cces/3.0.2/SHARC/include
 src/System/Framework/Main_Core1.doj: ../../../../analog/cces/3.0.2/SHARC/include/stdio.h
 src/System/Framework/Main_Core1.doj: ../../../../analog/cces/3.0.2/SHARC/include/stdio_21xxx.h
 src/System/Framework/Main_Core1.doj: ../src/System/Framework/../Include/Init_Struct.h
-src/System/Framework/Main_Core1.doj: ../src/System/Framework/../Include/commn.h
+src/System/Framework/Main_Core1.doj: ../src/System/Framework/../Include/Commn.h
 src/System/Framework/Main_Core1.doj: ../src/System/Framework/../Include/Def_Struct.h
 src/System/Framework/Main_Core1.doj: ../src/System/Framework/../Include/Commn.h
 src/System/Framework/Main_Core1.doj: ../../../../analog/cces/3.0.2/SHARC/include/drivers/sport/adi_sport.h
@@ -55,7 +55,7 @@ src/System/Framework/Main_Core1.doj: ../../../../analog/cces/3.0.2/SHARC/include
 src/System/Framework/Main_Core1.doj: ../../../../analog/cces/3.0.2/SHARC/include/builtins.h
 src/System/Framework/Main_Core1.doj: ../../../../analog/cces/3.0.2/SHARC/include/sys/builtins_support.h
 src/System/Framework/Main_Core1.doj: ../src/System/Framework/../Include/Codeid.h
-src/System/Framework/Main_Core1.doj: ../src/system/Include/Commn.h
+src/System/Framework/Main_Core1.doj: ../src/System/Include/Commn.h
 src/System/Framework/Main_Core1.doj: ../src/System/Framework/../Include/HostDefines.h
 src/System/Framework/Main_Core1.doj: ../../../../analog/cces/3.0.2/SHARC/include/sru.h
 src/System/Framework/Main_Core1.doj: ../../../../analog/cces/3.0.2/SHARC/include/sruSC594.h
@@ -67,7 +67,7 @@ src/System/Framework/Main_Core1.doj: ../../../../analog/cces/3.0.2/SHARC/include
 src/System/Framework/Main_Core1.doj: ../../../../analog/cces/3.0.2/SHARC/include/drivers/spi/adi_spi_config_SC59x.h
 src/System/Framework/Main_Core1.doj: ../src/System/Framework/../Include/Commn.h
 src/System/Framework/Main_Core1.doj: ../src/System/Framework/../Include/Extern_Core1.h
-src/System/Framework/Main_Core1.doj: ../src/System/Framework/../Include/commn.h
+src/System/Framework/Main_Core1.doj: ../src/System/Framework/../Include/Commn.h
 src/System/Framework/Main_Core1.doj: ../src/System/Framework/../Include/Common_macros__extern_definations.h
 src/System/Framework/Main_Core1.doj: ../src/System/Framework/../Include/ProcInclude.h
 src/System/Framework/Main_Core1.doj: ../src/System/Framework/../Include/SPI0_macros.h

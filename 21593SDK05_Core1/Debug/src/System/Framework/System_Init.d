@@ -1,5 +1,5 @@
 src/System/Framework/System_Init.doj: ../src/System/Framework/System_Init.c
-src/System/Framework/System_Init.doj: ../src/system/Include/System_Init.h
+src/System/Framework/System_Init.doj: ../src/System/Include/System_Init.h
 src/System/Framework/System_Init.doj: ../../../../analog/cces/3.0.2/SHARC/include/stdint.h
 src/System/Framework/System_Init.doj: ../../../../analog/cces/3.0.2/SHARC/include/yvals.h
 src/System/Framework/System_Init.doj: ../../../../analog/cces/3.0.2/SHARC/include/sys/platform.h
@@ -31,11 +31,11 @@ src/System/Framework/System_Init.doj: ../../../../analog/cces/3.0.2/SHARC/includ
 src/System/Framework/System_Init.doj: ../../../../analog/cces/3.0.2/SHARC/include/sys/builtins_support.h
 src/System/Framework/System_Init.doj: ../../../../analog/cces/3.0.2/SHARC/include/sru.h
 src/System/Framework/System_Init.doj: ../../../../analog/cces/3.0.2/SHARC/include/sruSC594.h
-src/System/Framework/System_Init.doj: ../src/system/Include/Codeid.h
-src/System/Framework/System_Init.doj: ../src/system/Include/Commn.h
-src/System/Framework/System_Init.doj: ../src/system/Include/Commn.h
-src/System/Framework/System_Init.doj: ../src/system/Include/Extern_Core1.h
-src/System/Framework/System_Init.doj: ../src/system/Include/commn.h
+src/System/Framework/System_Init.doj: ../src/System/Include/Codeid.h
+src/System/Framework/System_Init.doj: ../src/System/Include/Commn.h
+src/System/Framework/System_Init.doj: ../src/System/Include/Commn.h
+src/System/Framework/System_Init.doj: ../src/System/Include/Extern_Core1.h
+src/System/Framework/System_Init.doj: ../src/System/Include/Commn.h
 src/System/Framework/System_Init.doj: ../system/drivers/spdif/adi_spdif_rx_v1.h
 src/System/Framework/System_Init.doj: ../../../../analog/cces/3.0.2/SHARC/include/services/int/adi_int.h
 src/System/Framework/System_Init.doj: ../../../../analog/cces/3.0.2/SHARC/include/services/int/adi_int_id.h
@@ -64,9 +64,9 @@ src/System/Framework/System_Init.doj: ../../../../analog/cces/3.0.2/SHARC/includ
 src/System/Framework/System_Init.doj: ../../../../analog/cces/3.0.2/SHARC/include/drivers/asrc/adi_asrc.h
 src/System/Framework/System_Init.doj: ../../../../analog/cces/3.0.2/SHARC/include/drivers/asrc/adi_asrc_v1.h
 src/System/Framework/System_Init.doj: ../system/drivers/asrc/adi_asrc_config_SC59x.h
-src/System/Framework/System_Init.doj: ../src/system/Include/Def_Struct.h
-src/System/Framework/System_Init.doj: ../src/system/Include/Commn.h
-src/System/Framework/System_Init.doj: ../src/system/Include/TMU_ReadTemperature.h
+src/System/Framework/System_Init.doj: ../src/System/Include/Def_Struct.h
+src/System/Framework/System_Init.doj: ../src/System/Include/Commn.h
+src/System/Framework/System_Init.doj: ../src/System/Include/TMU_ReadTemperature.h
 src/System/Framework/System_Init.doj: ../system/adi_initialize.h
 src/System/Framework/System_Init.doj: ../../../../analog/cces/3.0.2/SHARC/include/drivers/tmu/adi_tmu.h
 src/System/Framework/System_Init.doj: ../../../../analog/cces/3.0.2/SHARC/include/drivers/tmu/adi_tmu_v1.h

@@ -3,7 +3,7 @@ src/System/Framework/PostProcessing.doj: ../src/System/Framework/../Include/Comm
 src/System/Framework/PostProcessing.doj: ../src/System/Framework/../Include/Def_Struct.h
 src/System/Framework/PostProcessing.doj: ../src/System/Framework/../Include/Commn.h
 src/System/Framework/PostProcessing.doj: ../src/System/Framework/../Include/Extern_Core1.h
-src/System/Framework/PostProcessing.doj: ../src/System/Framework/../Include/commn.h
+src/System/Framework/PostProcessing.doj: ../src/System/Framework/../Include/Commn.h
 src/System/Framework/PostProcessing.doj: ../src/System/Framework/../Include/Function_Prototype.h
 src/System/Framework/PostProcessing.doj: ../../../../analog/cces/3.0.2/SHARC/include/stdint.h
 src/System/Framework/PostProcessing.doj: ../../../../analog/cces/3.0.2/SHARC/include/yvals.h
@@ -44,5 +44,5 @@ src/System/Framework/PostProcessing.doj: ../../../../analog/cces/3.0.2/SHARC/inc
 src/System/Framework/PostProcessing.doj: ../system/services/pdma/adi_pdma_config_2156x.h
 src/System/Framework/PostProcessing.doj: ../src/System/Framework/../Include/Commn.h
 src/System/Framework/PostProcessing.doj: ../src/System/Framework/../Include/Codeid.h
-src/System/Framework/PostProcessing.doj: ../src/system/Include/Commn.h
+src/System/Framework/PostProcessing.doj: ../src/System/Include/Commn.h
 src/System/Framework/PostProcessing.doj: ../src/System/Framework/../Include/ar_speaker.h

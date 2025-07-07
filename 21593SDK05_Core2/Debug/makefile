@@ -104,7 +104,7 @@ all: 21593SDK05_Core2.ldr
 21593SDK05_Core2.ldr: $(DXE) $(SRC_OBJS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: CrossCore SHARC Loader'
-	elfloader -proc ADSP-21593 -si-revision any -bspimaster -fbinary -width 8 -bcode 1 -init "C:\Repo\audio-MAP\sharc\InitPreload\MAP_CCES_3_0_2\21593_init_Core1\Release\21593_init_Core1.dxe" -core1="../../21593SDK05_Core1/Debug/21593SDK05_Core1.dxe" -NoFinalTag="21593SDK05_Core1.dxe" -core2="../../21593SDK05_Core2/Debug/21593SDK05_Core2.dxe" -o "21593SDK05_Core2.ldr"
+	elfloader -proc ADSP-21593 -si-revision any -bspimaster -fbinary -width 8 -bcode 1 -init "../../MAP_CCES_3_0_2/21593_init_Core1/Release/21593_init_Core1.dxe" -core1="../../21593SDK05_Core1/Debug/21593SDK05_Core1.dxe" -NoFinalTag="21593SDK05_Core1.dxe" -core2="../../21593SDK05_Core2/Debug/21593SDK05_Core2.dxe" -o "21593SDK05_Core2.ldr"
 	@echo 'Finished building target: $@'
 	@echo ' '
 
