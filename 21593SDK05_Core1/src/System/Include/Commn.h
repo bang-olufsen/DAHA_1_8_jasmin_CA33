@@ -255,6 +255,7 @@ To compensate the increase in MPEG-H pack size, Predac_FIFO_Base_Ptr using commo
 #define MCLK_96KHZ    64
 #define MCLK_48KHZ    64
 
+#define BEO_CLK_DIV   64
 
 #define COUNT_2CH 32*2
 #define COUNT_4CH 32*4
