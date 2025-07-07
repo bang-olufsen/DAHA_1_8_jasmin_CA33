@@ -13,7 +13,7 @@ agree to the terms of the associated Analog Devices License Agreement.
 #include "../src/System/Include/Commn.h"
 #include <builtins.h>
 /*B&O Change Start */
-#include "version.h"
+#include "Version.h"
 /*B&O Change End */
 
 section("Seg_CustomerPP_Data")
