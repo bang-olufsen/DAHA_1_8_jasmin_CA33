@@ -1,8 +1,8 @@
 src/System/Framework/Tx_Rx_Handler.doj: ../src/System/Framework/Tx_Rx_Handler.c
-src/System/Framework/Tx_Rx_Handler.doj: ../src/system/Include/TX_RX_Handler.h
-src/System/Framework/Tx_Rx_Handler.doj: ../src/system/Include/Commn.h
-src/System/Framework/Tx_Rx_Handler.doj: ../src/system/Include/Extern_Core1.h
-src/System/Framework/Tx_Rx_Handler.doj: ../src/system/Include/commn.h
+src/System/Framework/Tx_Rx_Handler.doj: ../src/System/Include/TX_RX_Handler.h
+src/System/Framework/Tx_Rx_Handler.doj: ../src/System/Include/Commn.h
+src/System/Framework/Tx_Rx_Handler.doj: ../src/System/Include/Extern_Core1.h
+src/System/Framework/Tx_Rx_Handler.doj: ../src/System/Include/Commn.h
 src/System/Framework/Tx_Rx_Handler.doj: ../../../../analog/cces/3.0.2/SHARC/include/services/dma/adi_dma.h
 src/System/Framework/Tx_Rx_Handler.doj: ../../../../analog/cces/3.0.2/SHARC/include/sys/platform.h
 src/System/Framework/Tx_Rx_Handler.doj: ../../../../analog/cces/3.0.2/SHARC/include/platform_include.h
@@ -47,8 +47,8 @@ src/System/Framework/Tx_Rx_Handler.doj: ../../../../analog/cces/3.0.2/SHARC/incl
 src/System/Framework/Tx_Rx_Handler.doj: ../system/services/pdma/adi_pdma_config_2156x.h
 src/System/Framework/Tx_Rx_Handler.doj: ../system/drivers/sport/adi_sport_config_SC59x.h
 src/System/Framework/Tx_Rx_Handler.doj: ../../../../analog/cces/3.0.2/SHARC/include/string.h
-src/System/Framework/Tx_Rx_Handler.doj: ../src/system/Include/Def_Struct.h
-src/System/Framework/Tx_Rx_Handler.doj: ../src/system/Include/Commn.h
+src/System/Framework/Tx_Rx_Handler.doj: ../src/System/Include/Def_Struct.h
+src/System/Framework/Tx_Rx_Handler.doj: ../src/System/Include/Commn.h
 src/System/Framework/Tx_Rx_Handler.doj: ../src/System/Framework/../Include/Function_Prototype.h
 src/System/Framework/Tx_Rx_Handler.doj: ../../../../analog/cces/3.0.2/SHARC/include/drivers/spi/adi_spi_2156x.h
 src/System/Framework/Tx_Rx_Handler.doj: ../../../../analog/cces/3.0.2/SHARC/include/drivers/spi/adi_spi_config_SC59x.h

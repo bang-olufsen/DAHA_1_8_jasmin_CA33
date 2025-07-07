@@ -28,6 +28,7 @@ void Customer_PP_kernel()
 	CustPPInputList[7] = Frmwk.OutputSampleRate;
 	CustPPInputList[8] = Frmwk.Customer_pp.Volume;
 	CustomerPP_Gain_Control(CustPPInputList);
+	Customer_PP_Status_Update();
 }
 /******************************************************************************
 *  Module Name        : CustomerPP_Gain_Control
@@ -140,5 +141,9 @@ void CustomerPP_Gain_Control(int *CustPPInputList)
 void CUSTOMER_PP_COMMAND(void)
 {
 	Frmwk.Customer_pp.Volume		= 	(Frmwk.Spi.PARAMETER_1)&0x3;
+}
+void Customer_PP_Status_Update(void)
+{
+	Frmwk.Spi.RESERVED_BYTE9 = BO_Version_Info;
 }
 #endif

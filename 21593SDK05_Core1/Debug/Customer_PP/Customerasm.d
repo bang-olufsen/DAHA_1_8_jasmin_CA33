@@ -1,6 +1,6 @@
 Customer_PP/Customerasm.doj: ../Customer_PP/Customerasm.asm
 Customer_PP/Customerasm.doj: ../src/System/Include/Commn.h
-Customer_PP/Customerasm.doj: ../src/system/Include/Extern_SPI.h
+Customer_PP/Customerasm.doj: ../src/System/Include/Extern_SPI.h
 Customer_PP/Customerasm.doj: ../../../../analog/cces/3.0.2/SHARC/include/asm_sprt.h
 Customer_PP/Customerasm.doj: ../../../../analog/cces/3.0.2/SHARC/include/def21593.h
 Customer_PP/Customerasm.doj: ../../../../analog/cces/3.0.2/SHARC/include/sys/ADSP-21593.h

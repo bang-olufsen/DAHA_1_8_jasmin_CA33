@@ -94,7 +94,7 @@
 							<tool commandLinePattern="${COMMAND} ${FLAGS} ${OUTPUT_FLAG} ${OUTPUT_PREFIX}${OUTPUT} " id="sharc.toolchain.loader.94088884" name="CrossCore SHARC Loader" superClass="sharc.toolchain.loader">
 								<option id="loader.option.proc.219045262" name="-proc" superClass="loader.option.proc" useByScannerDiscovery="false" value=" ADSP-21593" valueType="string"/>
 								<option id="loader.option.sirevision.1799834645" name="-si-revision" superClass="loader.option.sirevision" useByScannerDiscovery="false" value=" any" valueType="string"/>
-								<option id="sharc.loader.option.kernelfile.1920447143" name="Kernel file (-l)" superClass="sharc.loader.option.kernelfile" useByScannerDiscovery="false" value="C:/analog/cces/3.0.2/SHARC/ldr/_spi.dxe" valueType="string"/>
+								<option id="sharc.loader.option.kernelfile.1920447143" name="Kernel file (-l)" superClass="sharc.loader.option.kernelfile" useByScannerDiscovery="false" value="C:\analog\cces\3.0.2\SHARC\ldr\_spi.dxe" valueType="string"/>
 								<option id="sharc.loader.option.enumerated.bootmode.844613292" name="Boot mode (-b)" superClass="sharc.loader.option.enumerated.bootmode" useByScannerDiscovery="false" value="sharc.loader.option.boot.enumerated.spimaster" valueType="enumerated"/>
 								<option id="sharc.loader.option.enumerated.bootformat.30959702" name="Boot format (-f)" superClass="sharc.loader.option.enumerated.bootformat" useByScannerDiscovery="false" value="sharc.loader.option.format.enumerated.binary" valueType="enumerated"/>
 								<option id="sharc.loader.option.bootcode.1362178979" name="Boot code (-bcode)" superClass="sharc.loader.option.bootcode" useByScannerDiscovery="false" value="1" valueType="string"/>

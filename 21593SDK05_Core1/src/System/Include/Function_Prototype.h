@@ -116,6 +116,7 @@ agree to the terms of the associated Analog Devices License Agreement.
 	void Led_Toggle_Routine(void);
 #endif
 	void Led2_Toggle_Routine(void);
+	void Customer_PP_Status_Update(void);
 
 	void System_Initialization(void);
 	void Spdif_Rx_Stop(void);

@@ -26,8 +26,8 @@
 /*Boot related macros*/
 #define CONFIG_BOOT_UART_BAUD_RATE (0)   /*!< Define as 1, if the UART Baud Rate need to be recalculated and reinitialized*/
 
-#define CONFIG_BOOT_SPI_CLOCK_RATE (0)   /*!< Define as 1, if the SPI Clock Rate need to be recalculated and reinitialized*/
-#define CONFIG_BOOT_SPI_CLOCK_VAL (1)	// Sclk0=125MHz -> ~62MHz (Highest possible speed)
+#define CONFIG_BOOT_SPI_CLOCK_RATE (1)   /*!< Define as 1, if the SPI Clock Rate need to be recalculated and reinitialized*/
+#define CONFIG_BOOT_SPI_CLOCK_VAL (2)	// Sclk0=125MHz -> ~62MHz (Highest possible speed)
 
 #define CONFIG_BOOT_OSPI_CLOCK_RATE (0)  /*!< Define as 1, if the OSPI Clock Rate need to be recalculated and reinitialized*/
 #define DO_PROCESS_BOOTSTRUCT (0)        /*!< Define as 1, if there is need to process the boot struct passed by ROM*/
