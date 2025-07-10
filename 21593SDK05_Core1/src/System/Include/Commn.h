@@ -13,6 +13,7 @@ agree to the terms of the associated Analog Devices License Agreement.
 #ifndef COMMN_H
 #define COMMN_H
 
+//Static Configuration
 #define BEO_PCM_I2S
 //#define BEO_MCPCM
 //#define BEO_MAT
