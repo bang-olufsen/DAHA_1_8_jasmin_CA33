@@ -1,0 +1,286 @@
+function decoder_config_CA33(ip, param)
+% decoder_config_CA33 B&O Configuration curl commands for CA33 decoder
+%   This function provides a list of curl commands for the decoder on CA33.
+%   One can give a dedicated parameter command to execute the wanted
+%   section or just run all of them
+%
+% Input arguments:
+%   ip:  ip address of product
+%   param:  which section to run:
+%           'Start' - Start playing through the decoder
+%           'Stop' - Stop playing through the decoder 
+%           'Resume' - Resume Output
+%           'SPORT' - SPORT Initialize 
+%           'General' - General Decoding Options
+%           'Special' - Special Function Options
+%           'ChannelReOrder' - Channel ReOrder Options
+%           'DDPlus' - Dolby Digital Plus Options
+%           'AtmosMatPcm' - Dolby TrueHd Atmos Mat Pcm Options
+%           'TrueHD' - Dolby TrueHd Options
+%           'SP&PP' - Dolby Speaker And PostProc Options
+%           'AAC' - MPEG4 AAC Decoder Options
+%           'MCPCM' - MCPCM Options
+%           'All' - Run all the commands in a specific order
+%           'Custom_1' - Custom Commands number 1
+%
+%
+% Example: 
+%   decoder_config_CA33('192.168.0.100','All')
+%
+% Tags: B&O, CA33, DSP, DECODER
+
+% Created by: GSUC
+% Creation date: 06-Dec-2023
+%
+% Bang & Olufsen A/S
+
+if strcmp(param, 'Start')
+
+    StartPlaying(ip);
+
+elseif strcmp(param, 'Stop') 
+
+    StopPlaying(ip);
+
+elseif strcmp(param, 'SPORT')
+
+    SportInitialize(ip);
+
+elseif strcmp(param, 'Resume')
+
+    ResumePlaying(ip);
+
+elseif strcmp(param, 'General')
+
+    GeneralDecoding(ip);
+
+elseif strcmp(param, 'Special')
+
+    SpecialFunction(ip);
+
+elseif strcmp(param, 'ChannelReOrder')
+
+    ChannelReOrder(ip);
+    
+elseif strcmp(param, 'DDPlus')  
+
+    DDPlus(ip);
+
+elseif strcmp(param, 'AtmosMatPcm')      
+   
+    DolbyTrueHdAtmosMatPcm(ip);
+
+elseif strcmp(param, 'TrueHD')  
+
+    DolbyTrueHd(ip);
+    
+elseif strcmp(param, 'SP&PP')  
+
+    DolbySpeakerAndPostProc(ip);
+
+elseif strcmp(param, 'AAC')  
+
+    MPEG4AACDecoder(ip);
+
+elseif strcmp(param, 'MCPCM')      
+
+    MCPCM(ip);
+
+elseif strcmp(param, 'All')    
+
+    StopPlaying(ip);
+    GeneralDecoding(ip);
+    SpecialFunction(ip); %We dont need these as we RUN ASRC TDM16 mode
+    % always
+    ChannelReOrder(ip);
+    DDPlus(ip);
+    DolbyTrueHdAtmosMatPcm(ip);
+    DolbyTrueHd(ip);
+    DolbySpeakerAndPostProc(ip);
+    AacOptions(ip);
+    MCPCM(ip);
+    SportInitialize(ip);
+    ResumePlaying(ip);
+    StartPlaying(ip);
+
+elseif strcmp(param, 'Custom_1')
+
+    Custom_1(ip);
+    
+else
+
+    error('Error - Wrong Parameter used');
+
+end 
+
+end
+
+
+%% Function Definitions
+
+function StartPlaying(ip) % queue[0]
+    
+    % Start Playing 
+    system(['curl -X POST "http://', ip, '/api/v1/production/decoder/run?cmd=0x20000002" -H  "accept: */*"']);
+
+end   
+
+function StopPlaying(ip)
+
+    % Stop Playing
+    system(['curl -X POST "http://', ip, '/api/v1/production/decoder/run?cmd=0x20000003" -H  "accept: */*"']);
+
+end    
+
+function SportInitialize(ip)
+
+    % SPORT Reinitialize
+    system(['curl -X POST "http://', ip, '/api/v1/production/decoder/run?cmd=0x20000006" -H  "accept: */*"']);
+
+end    
+
+function ResumePlaying(ip)
+
+    % Resumes The Output
+    system(['curl -X POST "http://', ip, '/api/v1/production/decoder/run?cmd=0x20000005" -H  "accept: */*"']);
+
+end
+
+function GeneralDecoding(ip)  %queue[1] =GeneralDecodingOptions(0x10)
+
+    % Parameter 1: Bits 5-2 are 0100 => LPCM Sample Delay = 16384
+    system(['curl -X POST "http://', ip, '/api/v1/production/decoder/run?cmd=0x20010010" -H  "accept: */*"']);
+    % Parameter 2: Bits 0-1 are 01 => PostDecoder: DAP Enable; Bits 7-4 are 1010 => Incoming Sampling Frequency = 192 kHz 
+    system(['curl -X POST "http://', ip, '/api/v1/production/decoder/run?cmd=0x200200a0" -H  "accept: */*"']);
+    % Paramter 3: Bit 4 is 1 => Input Source Selection = SPDIF; Bits 6-5 are 00 => Downsampling Mode = Straight Sampling
+    system(['curl -X POST "http://', ip, '/api/v1/production/decoder/run?cmd=0x20030000" -H  "accept: */*"']);
+    % Execute The General Decoding Options
+    system(['curl -X POST "http://', ip, '/api/v1/production/decoder/run?cmd=0x20000010" -H  "accept: */*"']);
+
+end
+
+function SpecialFunction(ip) %queue[2]=SpecialFunctionOptions(0x0e)
+
+    % Parameter 1: Bits 3-2 are 10 => ASRC output sample rate = 4*FS; Bits 5-4 are 11 => Transmitter Output mode = ASRC TDM Mode
+    system(['curl -X POST "http://', ip, '/api/v1/production/decoder/run?cmd=0x20010000" -H  "accept: */*"']);
+    % Execute The Special Function Options
+    system(['curl -X POST "http://', ip, '/api/v1/production/decoder/run?cmd=0x2000000e" -H  "accept: */*"']);
+
+end
+
+function ChannelReOrder(ip) %queue[3]=ChannelReOrderOptions(0x41)
+
+    % Parameter 1: Bits 3-0 are 0001 => DSP Assign Line 1 : Surround Back/Center Surround; 
+    % Bits 7-4 are 0110 => DSP Assign Line 2 : Top Middle; Bits 8-11 are 1010 => DSP Assign Line 3 : Top Rear;
+    % Bits 15-12 are 0000 => DSP Assign Line 4 : None
+    system(['curl -X POST "http://', ip, '/api/v1/production/decoder/run?cmd=0x20010a41" -H  "accept: */*"']);
+    % Parameter 2: Bits 3-0 are 0000 => DSP Assign Line 5 : None
+    system(['curl -X POST "http://', ip, '/api/v1/production/decoder/run?cmd=0x20020000" -H  "accept: */*"']);
+    % Execute The Channel ReOrder Options
+    system(['curl -X POST "http://', ip, '/api/v1/production/decoder/run?cmd=0x20000041" -H  "accept: */*"']);
+    
+end
+
+function DDPlus(ip) %queue[4]=DolbyDigitalPlusOptions(0x30)
+
+    % Parameter 1: Bit 2 is 0 => Dial Norm OFF; Bits 7-4 are 0000 => Low Dynamic Range Scale Factor = 0.0; 
+    % Bits 11-8 are 0001 => High Dynamic Range Scale Factor = 1.0; Bits 13-12 are 00 => DDPlus Packlength = 2048
+    system(['curl -X POST "http://', ip, '/api/v1/production/decoder/run?cmd=0x20010004" -H  "accept: */*"']);
+    % % Parameter 2: Doesn't exist??
+    % system(['curl -X POST "http://', ip, '/api/v1/production/decoder/run?cmd=0x20000030" -H  "accept: */*"']);
+    % Execute The Dolby Digital Plus Options
+    system(['curl -X POST "http://', ip, '/api/v1/production/decoder/run?cmd=0x20000030" -H  "accept: */*"']);
+
+end
+
+function DolbyTrueHdAtmosMatPcm(ip)%queue[5]=DolbyTrueHdAtmosMatPcmOptions(0x33)
+
+    % Paramter 1: Bits 2-1 are 00 => DRC Mode OFF; Bits 7-4 are 0000 => Low Dynamic Range Scale Factor = 0.0; 
+    % Bits 11-8 are 0000 => High Dynamic Range Scale Factor = 0.0; Bit 13 is 1 => Loudness Management ON; 
+    % Bit 15 is 1 => Dial Norm ON
+    system(['curl -X POST "http://', ip, '/api/v1/production/decoder/run?cmd=0x20012000" -H  "accept: */*"']);
+    % Execute The Dolby TrueHd Atmos Mat Pcm Options
+    system(['curl -X POST "http://', ip, '/api/v1/production/decoder/run?cmd=0x20000032" -H  "accept: */*"']);
+
+end
+
+function DolbyTrueHd(ip) %queue[6]=DolbyTrueHdOptions(0x32)
+
+    % Paramter 1: Bits 2-0 are 000 => Kernel DRC OFF; Bits 8-5 are 0000 => Low Dynamic Range Scale Factor = 0.0;
+    % Bits 12-9 are 0000 => High Dynamic Range Scale Factor = 0.0; Bit 13 is 1 => Loudness Management ON; 
+    % Bit 15 is 1 => Dial Norm ON
+    system(['curl -X POST "http://', ip, '/api/v1/production/decoder/run?cmd=0x20012000" -H  "accept: */*"']);
+    % Execute The Dolby TrueHD Options
+    system(['curl -X POST "http://', ip, '/api/v1/production/decoder/run?cmd=0x20000032" -H  "accept: */*"']);
+
+end
+
+function DolbySpeakerAndPostProc(ip) % queue[7]=DolbySpeakerAndPostProcOptions(0x42)
+
+    % Parameter 1: Bits 12-0 are 0 0100 0000 1011 => Speaker output Configuration = LR, C, LsRs, LtmRtm; 
+    % Bit 15 is 1 => LFE_Present Enable
+    system(['curl -X POST "http://', ip, '/api/v1/production/decoder/run?cmd=0x2001820b" -H  "accept: */*"']);
+    % Paramter 2: Bit 7 is 0 => Tuning Mode Disable; Bit 8 is 0 => Tuning_Config Disable; 
+    % Bits 12-9 are 0000 => Tuning Audio Profile OFF; Bits 14-13 are 00 => Tuning_File_ID = None
+    system(['curl -X POST "http://', ip, '/api/v1/production/decoder/run?cmd=0x20020000" -H  "accept: */*"']);
+    % Parameter 3: Bits 4-3 are 00 => Virtual Mode (Surround Virtualizer)
+    % Disable; Bit 5 is 0 => Upmixer (Surround_Upmixer_Enable) Disable; Bits 7-6 are 00 => Dolby Audio Processing Mode Disable; 
+    % Bit 8 is 0 => Cs Spread Disable; Bit 9 is 0 => Height cue filter Disable; 
+    % Bit 11 is 0 => DAP Volume Leveler Amplification OFF; Bit 12 is 0 => Legacy mode OFF
+    system(['curl -X POST "http://', ip, '/api/v1/production/decoder/run?cmd=0x20030004" -H  "accept: */*"']);
+    % Parameter 4: Bits 5-1 are 00000 => Frontangle = 0; Bits 10-6 are 00000 => Surrangle = 0; 
+    % Bits 15-11 are 00000 => Heightangle = 0
+    system(['curl -X POST "http://', ip, '/api/v1/production/decoder/run?cmd=0x20040014" -H  "accept: */*"']);
+    % Parameter 5: Bits 4-0 are 00000 => Rearsurrangle = 0; Bits 14-5 are 0000000000 => Frontgain = -480; 
+    % Bit 15 is 0 => datmosmusicapp Disable
+    system(['curl -X POST "http://', ip, '/api/v1/production/decoder/run?cmd=0x20053c00" -H  "accept: */*"']);
+    system(['curl -X POST "http://', ip, '/api/v1/production/decoder/run?cmd=0x200601e0" -H  "accept: */*"']);
+    system(['curl -X POST "http://', ip, '/api/v1/production/decoder/run?cmd=0x200701e0" -H  "accept: */*"']);
+    system(['curl -X POST "http://', ip, '/api/v1/production/decoder/run?cmd=0x200801e0" -H  "accept: */*"']);
+    system(['curl -X POST "http://', ip, '/api/v1/production/decoder/run?cmd=0x200901e0" -H  "accept: */*"']);
+    system(['curl -X POST "http://', ip, '/api/v1/production/decoder/run?cmd=0x200a01e0" -H  "accept: */*"']);
+    system(['curl -X POST "http://', ip, '/api/v1/production/decoder/run?cmd=0x200b01e0" -H  "accept: */*"']);
+    system(['curl -X POST "http://', ip, '/api/v1/production/decoder/run?cmd=0x200c0820" -H  "accept: */*"']);
+    system(['curl -X POST "http://', ip, '/api/v1/production/decoder/run?cmd=0x200d0820" -H  "accept: */*"']);
+    system(['curl -X POST "http://', ip, '/api/v1/production/decoder/run?cmd=0x200e0820" -H  "accept: */*"']);
+    
+    % Execute The Speaker and PostProc Options
+    system(['curl -X POST "http://', ip, '/api/v1/production/decoder/run?cmd=0x20000042" -H  "accept: */*"']);
+
+end
+
+function AacOptions(ip) %queue[8]=AacOptions(0x23)
+
+    % Parameter 1: Bits 1-0 are 00 => Dual Mono Reproduction Mode = Stereo;
+    % Bit 2 is 0 => Do ARIB Downmix = Normal Downmix; Bits 10-9 are 00 => Target Lopudness = TV sets
+    system(['curl -X POST "http://', ip, '/api/v1/production/decoder/run?cmd=0x20010000" -H  "accept: */*"']);
+    % Paramter 2: Bits 15-0 are 0000 0100 0001 0011 => Speaker Output Configuration = LR, C, LsRs, LtmRtm
+    system(['curl -X POST "http://', ip, '/api/v1/production/decoder/run?cmd=0x20020113" -H  "accept: */*"']);
+    % Parameter 3: Bits 9-0 are 00 0000 0000 => Speaker Output Configuration = None
+    system(['curl -X POST "http://', ip, '/api/v1/production/decoder/run?cmd=0x20030000" -H  "accept: */*"']);
+    % Execute The MPEG4 AAC Decoder Options
+    system(['curl -X POST "http://', ip, '/api/v1/production/decoder/run?cmd=0x20000023" -H  "accept: */*"']);
+
+end
+
+function MCPCM(ip) %queue[9]=McpcmOptions(0x35)
+
+    % Parameter 1: Bits 10-8 are 010 => Input Channel Configuration for MCPCM = LRC; 
+    % Bit 13 is 1 => LFE_Present = Enable
+    system(['curl -X POST "http://', ip, '/api/v1/production/decoder/run?cmd=0x20012200" -H  "accept: */*"']);
+    % Execute The MPCM Options
+    system(['curl -X POST "http://', ip, '/api/v1/production/decoder/run?cmd=0x20000035" -H  "accept: */*"']);
+
+end
+
+function Custom_1(ip)
+
+    % Stop Playing
+    StopPlaying(ip);
+
+    % Add your commands here
+
+    % Start Playing
+    StartPlaying(ip);
+
+end
