@@ -73,6 +73,7 @@ void main()
 
 	#ifdef BEO_Framework
 
+#ifndef BEO_NONE
 	Frmwk.Spi.PARAMETER_1 = 0x0030;
 	Tx_Rx_Mode_Command();
 
@@ -122,6 +123,7 @@ void main()
 	Frmwk.Spi.PARAMETER_13 = 0x0820;
 	Frmwk.Spi.PARAMETER_14 = 0x0820;
 	DAP_OARI_Command();
+#endif
 
 	SportInitialize_Command();
 #if defined (BEO_PCM_SPDIF) || defined (BEO_DDP)
